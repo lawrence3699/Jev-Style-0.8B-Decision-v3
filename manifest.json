@@ -1,0 +1,185 @@
+{
+  "format": "jev-style-manifest-v1",
+  "repo": "chaoliangUNSW/Jev-Style-0.8B-Decision-v3",
+  "created_unix": 1790264851.973563,
+  "files": {
+    "LICENSE": {
+      "sha256": "bbedc3fda3305820b977265f01b8619d87570a6739de3a5582c3464840f1e57a",
+      "bytes": 11544
+    },
+    "NOTICE": {
+      "sha256": "3c1bee42827901d754cf64e437cf8837ea94241348f5f4be9e6c4e14fbfc5716",
+      "bytes": 1966
+    },
+    "README.md": {
+      "sha256": "585bc12e68b9542402f14debe6efb1bd6cecc3388b840b99ec54da8b4142aad6",
+      "bytes": 32843
+    },
+    "chat_template.jinja": {
+      "sha256": "273d8e0e683b885071fb17e08d71e5f2a5ddfb5309756181681de4f5a1822d80",
+      "bytes": 7755
+    },
+    "config.json": {
+      "sha256": "3f56b6210db3c52e0bafb50da005eb52b6d340ab4ad980091879b397743675fc",
+      "bytes": 1790
+    },
+    "figures/banner.png": {
+      "sha256": "86aebc939a802a8c931cc85f7aab2c0b89e05a1d5cd0c6928aafd3289d396bec",
+      "bytes": 344736
+    },
+    "figures/beyond_laya.json": {
+      "sha256": "a6dfd582fe3aca32bcd67cf01b85190d92084a0790f7744dd03180df5923f946",
+      "bytes": 4357
+    },
+    "figures/beyond_laya.png": {
+      "sha256": "0dbd24837759acf05ed3a668016ecaea75a41a093b64588417d2fd750b95779b",
+      "bytes": 185526
+    },
+    "figures/beyond_laya.svg": {
+      "sha256": "4b64a4e71d3c9c05c9a785003bbfbd7269c5341bcc8abd560a2b156cfb771d6b",
+      "bytes": 22000
+    },
+    "figures/calibration.data.json": {
+      "sha256": "0396f5d48ba839c65718a7f1b449e7fa074503cbd1b9db48a2d40096c2d6142a",
+      "bytes": 3765
+    },
+    "figures/calibration.png": {
+      "sha256": "3176339f6e4f58c9efa583b101f5862141a326468cf177f2c50c3ce2d1adf06f",
+      "bytes": 148880
+    },
+    "figures/calibration.svg": {
+      "sha256": "7cdb177072406c736a03bcec696adacf037cf810f156dd8f94ab6cf24e1d76ec",
+      "bytes": 15047
+    },
+    "figures/design_table.data.json": {
+      "sha256": "84fd672a2c69d6881c199dc09ccbe7b1313b73bf7f56f54f574cf4eefe052003",
+      "bytes": 5313
+    },
+    "figures/design_table.png": {
+      "sha256": "5b907319a5a4f6ee8eea5800fbc732b95d15e941b1d0cd8d774d3705a1341744",
+      "bytes": 331936
+    },
+    "figures/design_table.svg": {
+      "sha256": "a0a23216766b235c950a071a614691b010dcea9f3a0c5bb8c6f8cc2a7ecae0bc",
+      "bytes": 26655
+    },
+    "figures/headline_typed.data.json": {
+      "sha256": "04380aa3823f80489ae37f893de0bda67ae2dae38fd07e37f88700f7c173f0ec",
+      "bytes": 3819
+    },
+    "figures/headline_typed.png": {
+      "sha256": "9e763e4cbd86a25299785b94a89945f2c3a7cab4b1c7d5000f9456c4d220a1f4",
+      "bytes": 175884
+    },
+    "figures/headline_typed.svg": {
+      "sha256": "a49ec30b28319d682d9465145bf6435ac4ec4ad11c46a28c552c9b851fb27f37",
+      "bytes": 20359
+    },
+    "figures/jevbench.data.json": {
+      "sha256": "f9173e65f5cd1fe9fadad8c93a8d00dbe5181e7314d49f18c6f547a0ed168543",
+      "bytes": 2645
+    },
+    "figures/jevbench.png": {
+      "sha256": "b75ab6864b4487d0a323c1019f7ce405fedcdb5a4d8dc910c86a29b3141b5388",
+      "bytes": 142720
+    },
+    "figures/jevbench.svg": {
+      "sha256": "2014d7664f268c2621e68226d4ec92eec6dd8dc7a04029024b5110a9341b812f",
+      "bytes": 12181
+    },
+    "figures/latency.data.json": {
+      "sha256": "c0eb510a69dfe1b1cd85beca6ba3c354be4984d588b4aae2672331606a119cbc",
+      "bytes": 1402
+    },
+    "figures/latency.png": {
+      "sha256": "d6d0d34b875997b8a733d4776dc34a1b564ddc64b48cea9d0def7f72a34af79e",
+      "bytes": 203081
+    },
+    "figures/latency.svg": {
+      "sha256": "c7bdf011eec488aae7197d653cb8486dfd8ccbd1a58f5ba222873de7410aca30",
+      "bytes": 24079
+    },
+    "figures/long_context.json": {
+      "sha256": "e6289e61da3bf4117ed4ed05820b99620e541c25cdeb5262e3a580fa9febff62",
+      "bytes": 5553
+    },
+    "figures/long_context.png": {
+      "sha256": "957fb443f67d1ed91ef61fa83b0496347299823799bc97692d25893060b1e26d",
+      "bytes": 224537
+    },
+    "figures/long_context.svg": {
+      "sha256": "ad7be559f77b11b56df84b4f286f9cea9c076d4caf47a2f8fb0f67ab46f7968b",
+      "bytes": 21403
+    },
+    "figures/multilingual.data.json": {
+      "sha256": "21018e6ed6ec35f30b2739a5fd0adfae10eee6aa6d24e0e877651317d7cc76e7",
+      "bytes": 9921
+    },
+    "figures/multilingual.png": {
+      "sha256": "544a3982019f7d0d8f788f4931ba88bde317956c87f7a7138fcd5e4ec22013d4",
+      "bytes": 300658
+    },
+    "figures/multilingual.svg": {
+      "sha256": "c4442d53ba20f1a3bfa3b5764db211a7a18db95c48ec834f78d454ca13efd7e4",
+      "bytes": 63997
+    },
+    "figures/quantization.data.json": {
+      "sha256": "a140816ef145a6dd096ef471e4afbff1cecd33adb663c6cb856e19845349fc2d",
+      "bytes": 5473
+    },
+    "figures/quantization.png": {
+      "sha256": "bc75c212caa11008ca929a685d3085040c2b4698afb58d04a0ad692b815be230",
+      "bytes": 253992
+    },
+    "figures/quantization.svg": {
+      "sha256": "70720bb46ec1e718dcbfac9a83d3b5d11d50b3a5cc3356915465d70d95f3d43b",
+      "bytes": 28756
+    },
+    "figures/zeroshot.json": {
+      "sha256": "003c087074b876efab789fadf94f51d134c604d5f2efce417557732de2272e9d",
+      "bytes": 1867
+    },
+    "figures/zeroshot.png": {
+      "sha256": "255e196d449c086130d0f06c493c64a7cc21730a38d21c1c2188641e4c08c002",
+      "bytes": 128831
+    },
+    "figures/zeroshot.svg": {
+      "sha256": "a148fa7cb8f4e0b6e529996441fadfa883595bfeb05dc93c4048609071655790",
+      "bytes": 14474
+    },
+    "generation_config.json": {
+      "sha256": "62153eb6c69f2e1f426beaa8002b7186437e949c7588167085df14e10e9c0a73",
+      "bytes": 116
+    },
+    "jev_style_decision.py": {
+      "sha256": "be38df723d83ef5fdffb8f7dfaee63b3c31e632b233fc3c7d5f6eb8c83fd994f",
+      "bytes": 25917
+    },
+    "model.safetensors": {
+      "sha256": "0f8c861605dcdfb356a63e056baa2106e81042e8981e8d0d26fe50b34599541e",
+      "bytes": 1504827608
+    },
+    "readout_config.json": {
+      "sha256": "01de9bcce7effbfd1ae0a3fa13e52d7fa9aa4dd1cd1e47977d6bbdcd5e63054a",
+      "bytes": 6236
+    },
+    "release_config.json": {
+      "sha256": "4d7d218a94acedfa57c60e53a5c24c7b45a621783fa6a9a8128eba07ab1916c5",
+      "bytes": 7009
+    },
+    "requirements.txt": {
+      "sha256": "855306c7cd8db9fcea2f865d61a0c53330c530c9dcf07e955a9250aaae2993f1",
+      "bytes": 201
+    },
+    "tokenizer.json": {
+      "sha256": "06b9509352d2af50381ab2247e083b80d32d5c0aba91c272ca9ff729b6a0e523",
+      "bytes": 19989325
+    },
+    "tokenizer_config.json": {
+      "sha256": "66e427c470fe580fe8c7b5725d857af23d8417e37fae62667ec698306a19987b",
+      "bytes": 1124
+    }
+  },
+  "readme_hashed": true,
+  "note": "manifest.json hashes every file of the repo except itself, README.md and figures/ included. The runtime --verify check skips the documentation (README.md, figures/, assets/) and checks every other file."
+}

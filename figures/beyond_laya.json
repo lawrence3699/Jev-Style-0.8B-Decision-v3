@@ -1,0 +1,94 @@
+{
+  "chart": "beyond_laya",
+  "unit": "percent (value x 100)",
+  "source": "runs/macjev/report_r2/scoreboard/scoreboard.json via hf_staging/v3_card/chart_data.json",
+  "delta_ci_method": "case-cluster bootstrap within suites, 2000 resamples (scoreboard n_boot)",
+  "rows": [
+    {
+      "task": "Banking77",
+      "metric": "accuracy, 77 intents",
+      "v3": 0.6825,
+      "best_laya": 0.4925,
+      "best_laya_checkpoint": "typed",
+      "delta_pts": 19.0,
+      "delta_ci95_pts": [
+        13.99,
+        24.0
+      ],
+      "n": 400,
+      "v3_entry": "banking77.v3",
+      "laya_entry": "banking77.laya_best",
+      "scoreboard_field": "metrics['banking77']",
+      "protocol_label": "v3: held-out (banking77 never trained; CLINC150/HWU64 intents are) / Laya: held-out. Laya numbers: official checkpoints re-run by us on identical rows, shipped temperatures."
+    },
+    {
+      "task": "Jailbreak",
+      "metric": "balanced accuracy",
+      "v3": 0.9036238842064085,
+      "best_laya": 0.8311462000782389,
+      "best_laya_checkpoint": "multilingual",
+      "delta_pts": 7.25,
+      "delta_ci95_pts": [
+        2.99,
+        11.43
+      ],
+      "n": 400,
+      "v3_entry": "theme.guardrails_jailbreak.balanced_accuracy.v3",
+      "laya_entry": "theme.guardrails_jailbreak.balanced_accuracy.laya_best",
+      "scoreboard_field": "metrics['theme.guardrails_jailbreak.balanced_accuracy']",
+      "protocol_label": "v3: held-out source (other permissive jailbreak sets + teacher) / Laya: held-out. Laya numbers: official checkpoints re-run by us on identical rows, shipped temperatures."
+    },
+    {
+      "task": "Toxicity",
+      "metric": "macro-F1",
+      "v3": 0.7089254055198327,
+      "best_laya": 0.41360068097985436,
+      "best_laya_checkpoint": "multilingual",
+      "delta_pts": 29.53,
+      "delta_ci95_pts": [
+        24.65,
+        34.37
+      ],
+      "n": 400,
+      "v3_entry": "theme.moderation_toxicity.macro_f1.v3",
+      "laya_entry": "theme.moderation_toxicity.macro_f1.laya_best",
+      "scoreboard_field": "metrics['theme.moderation_toxicity.macro_f1']",
+      "protocol_label": "v3: held-out source (civil_comments + teacher; toxic-chat eval-only) / Laya: held-out. Laya numbers: official checkpoints re-run by us on identical rows, shipped temperatures."
+    },
+    {
+      "task": "Model routing",
+      "metric": "accuracy",
+      "v3": 0.9624060150375939,
+      "best_laya": 0.6591478696741855,
+      "best_laya_checkpoint": "typed",
+      "delta_pts": 30.33,
+      "delta_ci95_pts": [
+        26.06,
+        35.09
+      ],
+      "n": 399,
+      "v3_entry": "theme.model_routing_domain.v3",
+      "laya_entry": "theme.model_routing_domain.laya_best",
+      "scoreboard_field": "metrics['theme.model_routing_domain']",
+      "protocol_label": "v3: near-domain (teacher-written; gsm8k/mbpp/AG rows eval-only) / Laya: held-out. Laya numbers: official checkpoints re-run by us on identical rows, shipped temperatures."
+    },
+    {
+      "task": "MASSIVE intent",
+      "metric": "37 held-out locales",
+      "v3": 0.6551351351351351,
+      "best_laya": 0.36108108108108106,
+      "best_laya_checkpoint": "multilingual",
+      "delta_pts": 29.41,
+      "delta_ci95_pts": [
+        27.54,
+        31.3
+      ],
+      "n": 3700,
+      "v3_entry": "massive51.unseen37.macro_accuracy.v3",
+      "laya_entry": "massive51.unseen37.macro_accuracy.laya_best",
+      "scoreboard_field": "metrics['massive51.unseen37.macro_accuracy']",
+      "protocol_label": "v3: held-out (37 languages never trained) / Laya: held-out. Laya numbers: official checkpoints re-run by us on identical rows, shipped temperatures."
+    }
+  ],
+  "footnote": "Laya numbers: official checkpoints (English, typed-decisions, multilingual) re-run by us on identical rows with their shipped temperatures and\ndefault token budgets; the best of the three is shown per task. v3 trained on same-kind tasks from other datasets, never on these eval rows:\nintent (CLINC150/HWU64; Banking77 never trained), jailbreak (other permissive sets + teacher), toxicity (civil_comments + teacher; toxic-chat\neval-only), routing (teacher-written; gsm8k/mbpp/AG rows eval-only), MASSIVE in 14 other locales (no MASSIVE rows in these 37).\nn = 400 / 400 / 400 / 399 / 3,700 (37 x 100). Every gap's paired 95% bootstrap CI excludes zero. Plotted values: figures/beyond_laya.json."
+}

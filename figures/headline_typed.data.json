@@ -1,0 +1,90 @@
+{
+ "figure": "headline_typed",
+ "panels": {
+  "accuracy_pct": [
+   {
+    "label": "Jev-Style 2B v1",
+    "entry": "typed.teacher_agreement.v1",
+    "raw": 0.5335,
+    "plotted": 53.4,
+    "source": "https://huggingface.co/chaoliangUNSW/Jev-Style-Qwen3.5-2B-Decision-v2/raw/main/README.md",
+    "field": "card text: 'The separate typed-decisions group contains 2,000 teacher-reference decisions from 400 states. Teacher agreement is 53.35% for v1, 37.55% for English Laya and 73.45% for v2'"
+   },
+   {
+    "label": "Jev",
+    "entry": "typed.accuracy.jev",
+    "raw": 0.727,
+    "plotted": 72.7,
+    "source": "docs/round2_audit/track_jev_results.json",
+    "field": "string 'Jev typed-decisions (zero-shot)': '0.727 acc; KL 1.442; Brier 0.148; ECE 0.144; soft-acc 0.580' (from LocalLLaMA/typed-decisions dataset card / Laya HF card)"
+   },
+   {
+    "label": "Jev-Style 2B v2",
+    "entry": "typed.teacher_agreement.v2",
+    "raw": 0.7345,
+    "plotted": 73.5,
+    "source": "https://huggingface.co/chaoliangUNSW/Jev-Style-Qwen3.5-2B-Decision-v2/raw/main/README.md",
+    "field": "card text: 'The separate typed-decisions group contains 2,000 teacher-reference decisions from 400 states. Teacher agreement is 53.35% for v1, 37.55% for English Laya and 73.45% for v2'"
+   },
+   {
+    "label": "Laya (typed ckpt)",
+    "entry": "typed.accuracy.laya_typed",
+    "raw": 0.766,
+    "plotted": 76.6,
+    "source": "runs/macjev/report_r2/scoreboard/scoreboard.json",
+    "field": "metrics['typed.accuracy'].laya.typed.value"
+   },
+   {
+    "label": "Jev-Style 0.8B v3",
+    "entry": "typed.accuracy.v3",
+    "raw": 0.7915,
+    "plotted": 79.2,
+    "source": "runs/macjev/report_r2/scoreboard/scoreboard.json",
+    "field": "metrics['typed.accuracy'].ours_value"
+   }
+  ],
+  "brier_vs_soft": [
+   {
+    "label": "Jev",
+    "entry": "typed.Brier_vs_soft_labels.jev",
+    "raw": 0.148,
+    "plotted": 0.148,
+    "source": "docs/round2_audit/track_jev_results.json",
+    "field": "string 'Jev typed-decisions (zero-shot)': '0.727 acc; KL 1.442; Brier 0.148; ECE 0.144; soft-acc 0.580' (from LocalLLaMA/typed-decisions dataset card / Laya HF card)"
+   },
+   {
+    "label": "Laya (typed ckpt)",
+    "entry": "typed.brier_vs_soft.laya_typed",
+    "raw": 0.06146485330135357,
+    "plotted": 0.061,
+    "source": "runs/macjev/report_r2/scoreboard/scoreboard.json",
+    "field": "metrics['typed.brier_vs_soft'].laya.typed.value"
+   },
+   {
+    "label": "Jev-Style 0.8B v3",
+    "entry": "typed.brier_vs_soft.v3",
+    "raw": 0.04583493309263009,
+    "plotted": 0.046,
+    "source": "runs/macjev/report_r2/scoreboard/scoreboard.json",
+    "field": "metrics['typed.brier_vs_soft'].ours_value"
+   }
+  ]
+ },
+ "annotations": {
+  "delta_vs_jev_pts": 6.4,
+  "delta_vs_v2_pts": 5.7,
+  "delta_vs_laya_typed_pts": 2.6,
+  "brier_ratio_jev_over_v3": 3.229,
+  "brier_pct_lower_than_laya_typed": 25.4,
+  "v3_acc_ci95_wilson": [
+   0.7731,
+   0.8087
+  ],
+  "v3_minus_laya_typed_paired_ci95": [
+   0.010499999999999954,
+   0.04249999999999998
+  ]
+ },
+ "protocol": "in-domain for v3 and Laya typed; zero-shot for Jev (dataset card); 2B v1/v2 as reported on the v2 card",
+ "footnote": "Typed-decisions test set (LocalLLaMA/typed-decisions), 2,000 decisions from 400 states. In-domain for v3 and Laya typed (both trained on its\ntrain split); zero-shot for Jev (dataset-card numbers, Jev API, all 2,000 decisions). Laya: official typed-decisions checkpoint re-run by us on\nidentical rows with its shipped temperature. 2B v1/v2: teacher agreement as reported on the v2 card (same 2,000 decisions, that card's harness;\nv1 was not trained on typed decisions, v2's pool included typed workflow decisions). v3 95% CI 77.3\u201380.9% (Wilson);\nv3 minus Laya typed, paired bootstrap 95% CI +1.0 to +4.2 pts. Plotted values: figures/headline_typed.data.json."
+}

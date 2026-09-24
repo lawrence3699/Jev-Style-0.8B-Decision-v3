@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="547.2pt" height="360pt" viewBox="0 0 547.2 360" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-09-24T22:40:09.555947</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 360 
+L 547.2 360 
+L 547.2 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 49.248 264.6 
+L 530.784 264.6 
+L 530.784 79.2 
+L 49.248 79.2 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1"/>
+     <g id="text_1">
+      <text style="font-size: 10px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; fill: #0d0d0f" transform="translate(119.539575 280.26)">tweet_topic</text>
+      <text style="font-size: 10px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; fill: #0d0d0f" transform="translate(94.802075 292.19)">6 topics · 1,693 tweets</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2"/>
+     <g id="text_2">
+      <text style="font-size: 10px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; fill: #0d0d0f" transform="translate(380.381 280.26)">fin_topic</text>
+      <text style="font-size: 10px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; fill: #0d0d0f" transform="translate(328.328656 292.19)">20 topics · 4,117 finance tweets</text>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_3">
+      <path d="M 49.248 264.6 
+L 530.784 264.6 
+" clip-path="url(#p26798d4ba0)" style="fill: none; stroke: #ececef; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_4"/>
+     <g id="text_3">
+      <text style="font-size: 9.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #5e5e66" x="43.248" y="269.122" transform="rotate(-0 43.248 269.122)">0</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_5">
+      <path d="M 49.248 227.52 
+L 530.784 227.52 
+" clip-path="url(#p26798d4ba0)" style="fill: none; stroke: #ececef; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_6"/>
+     <g id="text_4">
+      <text style="font-size: 9.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #5e5e66" x="43.248" y="232.042" transform="rotate(-0 43.248 232.042)">20</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_7">
+      <path d="M 49.248 190.44 
+L 530.784 190.44 
+" clip-path="url(#p26798d4ba0)" style="fill: none; stroke: #ececef; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_8"/>
+     <g id="text_5">
+      <text style="font-size: 9.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #5e5e66" x="43.248" y="194.962" transform="rotate(-0 43.248 194.962)">40</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_9">
+      <path d="M 49.248 153.36 
+L 530.784 153.36 
+" clip-path="url(#p26798d4ba0)" style="fill: none; stroke: #ececef; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_10"/>
+     <g id="text_6">
+      <text style="font-size: 9.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #5e5e66" x="43.248" y="157.882" transform="rotate(-0 43.248 157.882)">60</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_11">
+      <path d="M 49.248 116.28 
+L 530.784 116.28 
+" clip-path="url(#p26798d4ba0)" style="fill: none; stroke: #ececef; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_12"/>
+     <g id="text_7">
+      <text style="font-size: 9.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #5e5e66" x="43.248" y="120.802" transform="rotate(-0 43.248 120.802)">80</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_13">
+      <path d="M 49.248 79.2 
+L 530.784 79.2 
+" clip-path="url(#p26798d4ba0)" style="fill: none; stroke: #ececef; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_14"/>
+     <g id="text_8">
+      <text style="font-size: 9.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #5e5e66" x="43.248" y="83.722" transform="rotate(-0 43.248 83.722)">100%</text>
+     </g>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 65.00736 264.6 
+L 138.55104 264.6 
+L 138.55104 147.424572 
+L 65.00736 147.424572 
+z
+" clip-path="url(#p26798d4ba0)" style="fill: #d0d0d6"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 152.55936 264.6 
+L 226.10304 264.6 
+L 226.10304 124.646545 
+L 152.55936 124.646545 
+z
+" clip-path="url(#p26798d4ba0)" style="fill: #3456f0"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 318.90816 264.6 
+L 392.45184 264.6 
+L 392.45184 201.19383 
+L 318.90816 201.19383 
+z
+" clip-path="url(#p26798d4ba0)" style="fill: #d0d0d6"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 406.46016 264.6 
+L 480.00384 264.6 
+L 480.00384 178.001943 
+L 406.46016 178.001943 
+z
+" clip-path="url(#p26798d4ba0)" style="fill: #3456f0"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 49.248 264.6 
+L 49.248 79.2 
+" style="fill: none; stroke: #c9c9cf; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 49.248 264.6 
+L 530.784 264.6 
+" style="fill: none; stroke: #c9c9cf; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 10px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #5e5e66" x="101.7792" y="160.652572" transform="rotate(-0 101.7792 160.652572)">63.2</text>
+   </g>
+   <g id="text_10">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #ffffff" x="189.3312" y="138.104545" transform="rotate(-0 189.3312 138.104545)">75.5</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 8.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; fill: #5e5e66" transform="translate(92.7267 246.707758)">Laya</text>
+    <text style="font-size: 8.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; fill: #5e5e66" transform="translate(88.005216 257.591875)">English</text>
+   </g>
+   <g id="text_12">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; fill: #ffffff" transform="translate(184.758466 247.153848)">v3</text>
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; fill: #ffffff" transform="translate(180.432098 258.299048)">0.8B</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 10px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #5e5e66" x="355.68" y="214.42183" transform="rotate(-0 355.68 214.42183)">34.2</text>
+   </g>
+   <g id="text_14">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #ffffff" x="443.232" y="191.459943" transform="rotate(-0 443.232 191.459943)">46.7</text>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 8.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; fill: #5e5e66" transform="translate(346.6275 246.707758)">Laya</text>
+    <text style="font-size: 8.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; fill: #5e5e66" transform="translate(341.906016 257.591875)">English</text>
+   </g>
+   <g id="text_16">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; fill: #ffffff" transform="translate(438.659266 247.153848)">v3</text>
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; fill: #ffffff" transform="translate(434.332898 258.299048)">0.8B</text>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 9.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #6b6b73" x="245.36448" y="114.948711" transform="rotate(-0 245.36448 114.948711)">Jev 79.3</text>
+   </g>
+   <g id="text_18">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #2340d0" x="245.36448" y="127.415811" transform="rotate(-0 245.36448 127.415811)">v3 within 4 pts</text>
+   </g>
+   <g id="line2d_15">
+    <path d="M 101.7792 133.519572 
+L 101.7792 102.398545 
+L 189.3312 102.398545 
+L 189.3312 110.741545 
+" clip-path="url(#p26798d4ba0)" style="fill: none; stroke: #2340d0; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_16">
+    <path d="M 355.68 187.28883 
+L 355.68 155.753943 
+L 443.232 155.753943 
+L 443.232 164.096943 
+" clip-path="url(#p26798d4ba0)" style="fill: none; stroke: #2340d0; stroke-linecap: round"/>
+   </g>
+   <g id="text_19">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #2340d0" x="145.5552" y="98.003745" transform="rotate(-0 145.5552 98.003745)">+12.3 pts vs English Laya</text>
+   </g>
+   <g id="text_20">
+    <text style="font-weight: 700; font-size: 10px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #2340d0" x="399.456" y="151.359143" transform="rotate(-0 399.456 151.359143)">+12.5 pts vs English Laya</text>
+   </g>
+   <g id="line2d_17">
+    <path d="M 152.55936 117.528411 
+L 240.11136 117.528411 
+" clip-path="url(#p26798d4ba0)" style="fill: none; stroke-dasharray: 4.2,2.8; stroke-dashoffset: 0; stroke: #6b6b73; stroke-width: 1.4"/>
+   </g>
+  </g>
+  <g id="text_21">
+   <text style="font-weight: 700; font-size: 15px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0d0d0f" x="16.416" y="30.825" transform="rotate(-0 16.416 30.825)">+12 points over English Laya on topics v3 never trained on</text>
+  </g>
+  <g id="text_22">
+   <text style="font-size: 10.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #5e5e66" x="16.416" y="51.396" transform="rotate(-0 16.416 51.396)">Zero-shot topic classification accuracy, higher is better. On tweet_topic the 0.8B v3 lands within 4 points of Jev.</text>
+  </g>
+  <g id="text_23">
+   <text style="font-size: 7.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; fill: #8e8e96" transform="translate(16.416 314.158945)">Zero-shot for every system: neither set is in v3's training pool; accuracy over every row of the pinned test files.</text>
+   <text style="font-size: 7.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; fill: #8e8e96" transform="translate(16.416 325.987969)">Jev (1.13, API) and English Laya: numbers published by the elcronos jev-vs-open-decision-models study with its own prompt</text>
+   <text style="font-size: 7.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; fill: #8e8e96" transform="translate(16.416 337.791211)">(results/cross_dataset_summary.json @ a1901bc), not re-run by us. v3: scored by us on the identical rows, label sets and</text>
+   <text style="font-size: 7.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; fill: #8e8e96" transform="translate(16.416 349.590937)">instruction, in v3's own input format.</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p26798d4ba0">
+   <rect x="49.248" y="79.2" width="481.536" height="185.4"/>
+  </clipPath>
+ </defs>
+</svg>

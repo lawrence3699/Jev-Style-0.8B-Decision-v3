@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="748.8pt" height="540pt" viewBox="0 0 748.8 540" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-09-24T22:41:35.345299</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 540 
+L 748.8 540 
+L 748.8 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="patch_2">
+   <path d="M 550.368 444.96 
+L 706.1184 444.96 
+Q 715.104 444.96 715.104 438.48 
+L 715.104 92.88 
+Q 715.104 86.4 706.1184 86.4 
+L 550.368 86.4 
+Q 541.3824 86.4 541.3824 92.88 
+L 541.3824 438.48 
+Q 541.3824 444.96 550.368 444.96 
+z
+" style="fill: #f3f5fe; stroke: #dce3fd; stroke-linejoin: miter"/>
+  </g>
+  <g id="line2d_1">
+   <path d="M 26.208 121.5 
+L 722.592 121.5 
+" style="fill: none; stroke: #c9c9cf; stroke-width: 0.9; stroke-linecap: square"/>
+  </g>
+  <g id="line2d_2">
+   <path d="M 26.208 157.14 
+L 722.592 157.14 
+" style="fill: none; stroke: #ececef; stroke-width: 0.8; stroke-linecap: square"/>
+  </g>
+  <g id="line2d_3">
+   <path d="M 26.208 192.78 
+L 722.592 192.78 
+" style="fill: none; stroke: #ececef; stroke-width: 0.8; stroke-linecap: square"/>
+  </g>
+  <g id="line2d_4">
+   <path d="M 26.208 228.42 
+L 722.592 228.42 
+" style="fill: none; stroke: #ececef; stroke-width: 0.8; stroke-linecap: square"/>
+  </g>
+  <g id="line2d_5">
+   <path d="M 26.208 264.06 
+L 722.592 264.06 
+" style="fill: none; stroke: #ececef; stroke-width: 0.8; stroke-linecap: square"/>
+  </g>
+  <g id="line2d_6">
+   <path d="M 26.208 299.7 
+L 722.592 299.7 
+" style="fill: none; stroke: #ececef; stroke-width: 0.8; stroke-linecap: square"/>
+  </g>
+  <g id="line2d_7">
+   <path d="M 26.208 335.34 
+L 722.592 335.34 
+" style="fill: none; stroke: #ececef; stroke-width: 0.8; stroke-linecap: square"/>
+  </g>
+  <g id="line2d_8">
+   <path d="M 26.208 370.98 
+L 722.592 370.98 
+" style="fill: none; stroke: #ececef; stroke-width: 0.8; stroke-linecap: square"/>
+  </g>
+  <g id="line2d_9">
+   <path d="M 26.208 406.62 
+L 722.592 406.62 
+" style="fill: none; stroke: #ececef; stroke-width: 0.8; stroke-linecap: square"/>
+  </g>
+  <g id="text_1">
+   <text style="font-weight: 700; font-size: 15px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0d0d0f" x="26.208" y="38.925" transform="rotate(-0 26.208 38.925)">Third generation: 40% of the size, 25x v2's prompt budget, no option cap</text>
+  </g>
+  <g id="text_2">
+   <text style="font-size: 10.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #5e5e66" x="26.208" y="72.096" transform="rotate(-0 26.208 72.096)">Jev-Style decision series, v1, v2 and v3 side by side: what changed in the design</text>
+  </g>
+  <g id="text_3">
+   <text style="font-weight: 700; font-size: 11px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #5e5e66" x="228.384" y="109.469" transform="rotate(-0 228.384 109.469)">Jev-Style 2B v1</text>
+  </g>
+  <g id="text_4">
+   <text style="font-weight: 700; font-size: 11px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #5e5e66" x="389.376" y="109.469" transform="rotate(-0 389.376 109.469)">Jev-Style 2B v2</text>
+  </g>
+  <g id="text_5">
+   <text style="font-weight: 700; font-size: 11px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #2340d0" x="550.368" y="109.469" transform="rotate(-0 550.368 109.469)">Jev-Style 0.8B v3</text>
+  </g>
+  <g id="text_6">
+   <text style="font-weight: 700; font-size: 10px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0d0d0f" x="26.208" y="143.11" transform="rotate(-0 26.208 143.11)">Parameters</text>
+  </g>
+  <g id="text_7">
+   <text style="font-size: 10.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0d0d0f" x="228.384" y="137.25975" transform="rotate(-0 228.384 137.25975)">2B</text>
+  </g>
+  <g id="text_8">
+   <text style="font-size: 8.3px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #8e8e96" x="228.384" y="151.02685" transform="rotate(-0 228.384 151.02685)">Qwen3.5-2B-Base</text>
+  </g>
+  <g id="text_9">
+   <text style="font-size: 10.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0d0d0f" x="389.376" y="137.25975" transform="rotate(-0 389.376 137.25975)">2B</text>
+  </g>
+  <g id="text_10">
+   <text style="font-size: 8.3px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #8e8e96" x="389.376" y="151.02685" transform="rotate(-0 389.376 151.02685)">continued from v1</text>
+  </g>
+  <g id="text_11">
+   <text style="font-weight: 700; font-size: 11.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #2340d0" x="550.368" y="137.7385" transform="rotate(-0 550.368 137.7385)">0.8B</text>
+  </g>
+  <g id="text_12">
+   <text style="font-size: 8.3px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #2340d0; opacity: 0.85" x="550.368" y="151.02685" transform="rotate(-0 550.368 151.02685)">752M text-model params</text>
+  </g>
+  <g id="text_13">
+   <text style="font-weight: 700; font-size: 10px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0d0d0f" x="26.208" y="178.75" transform="rotate(-0 26.208 178.75)">Training</text>
+  </g>
+  <g id="text_14">
+   <text style="font-size: 10.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0d0d0f" x="228.384" y="172.89975" transform="rotate(-0 228.384 172.89975)">LoRA rank 16</text>
+  </g>
+  <g id="text_15">
+   <text style="font-size: 8.3px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #8e8e96" x="228.384" y="186.66685" transform="rotate(-0 228.384 186.66685)">all linear layers</text>
+  </g>
+  <g id="text_16">
+   <text style="font-size: 10.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0d0d0f" x="389.376" y="172.89975" transform="rotate(-0 389.376 172.89975)">LoRA rank 32</text>
+  </g>
+  <g id="text_17">
+   <text style="font-size: 8.3px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #8e8e96" x="389.376" y="186.66685" transform="rotate(-0 389.376 186.66685)">33.6M trainable params</text>
+  </g>
+  <g id="text_18">
+   <text style="font-weight: 700; font-size: 11.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #2340d0" x="550.368" y="173.3785" transform="rotate(-0 550.368 173.3785)">Full fine-tune</text>
+  </g>
+  <g id="text_19">
+   <text style="font-size: 8.3px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #2340d0; opacity: 0.85" x="550.368" y="186.66685" transform="rotate(-0 550.368 186.66685)">every weight trained</text>
+  </g>
+  <g id="text_20">
+   <text style="font-weight: 700; font-size: 10px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0d0d0f" x="26.208" y="214.39" transform="rotate(-0 26.208 214.39)">Readout</text>
+  </g>
+  <g id="text_21">
+   <text style="font-size: 10.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0d0d0f" x="228.384" y="208.53975" transform="rotate(-0 228.384 208.53975)">Option-letter token</text>
+  </g>
+  <g id="text_22">
+   <text style="font-size: 8.3px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #8e8e96" x="228.384" y="222.30685" transform="rotate(-0 228.384 222.30685)">one letter per option</text>
+  </g>
+  <g id="text_23">
+   <text style="font-size: 10.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0d0d0f" x="389.376" y="208.53975" transform="rotate(-0 389.376 208.53975)">Option-letter token</text>
+  </g>
+  <g id="text_24">
+   <text style="font-size: 8.3px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #8e8e96" x="389.376" y="222.30685" transform="rotate(-0 389.376 222.30685)">' A' ... ' Z'</text>
+  </g>
+  <g id="text_25">
+   <text style="font-weight: 700; font-size: 11.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #2340d0" x="550.368" y="209.0185" transform="rotate(-0 550.368 209.0185)">Verdict slot per option</text>
+  </g>
+  <g id="text_26">
+   <text style="font-size: 8.3px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #2340d0; opacity: 0.85" x="550.368" y="222.30685" transform="rotate(-0 550.368 222.30685)">every option scored, one pass</text>
+  </g>
+  <g id="text_27">
+   <text style="font-weight: 700; font-size: 10px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0d0d0f" x="26.208" y="250.03" transform="rotate(-0 26.208 250.03)">Options per decision</text>
+  </g>
+  <g id="text_28">
+   <text style="font-size: 10.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0d0d0f" x="228.384" y="244.17975" transform="rotate(-0 228.384 244.17975)">Up to 26</text>
+  </g>
+  <g id="text_29">
+   <text style="font-size: 8.3px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #8e8e96" x="228.384" y="257.94685" transform="rotate(-0 228.384 257.94685)">20 via top_logprobs</text>
+  </g>
+  <g id="text_30">
+   <text style="font-size: 10.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0d0d0f" x="389.376" y="244.17975" transform="rotate(-0 389.376 244.17975)">2-26</text>
+  </g>
+  <g id="text_31">
+   <text style="font-size: 8.3px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #8e8e96" x="389.376" y="257.94685" transform="rotate(-0 389.376 257.94685)">letter-capped</text>
+  </g>
+  <g id="text_32">
+   <text style="font-weight: 700; font-size: 11.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #2340d0" x="550.368" y="244.6585" transform="rotate(-0 550.368 244.6585)">No letter cap</text>
+  </g>
+  <g id="text_33">
+   <text style="font-size: 8.3px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #2340d0; opacity: 0.85" x="550.368" y="257.94685" transform="rotate(-0 550.368 257.94685)">tested with 77 options</text>
+  </g>
+  <g id="text_34">
+   <text style="font-weight: 700; font-size: 10px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0d0d0f" x="26.208" y="285.67" transform="rotate(-0 26.208 285.67)">Context</text>
+  </g>
+  <g id="text_35">
+   <text style="font-size: 10.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0d0d0f" x="228.384" y="279.81975" transform="rotate(-0 228.384 279.81975)">Not stated</text>
+  </g>
+  <g id="text_36">
+   <text style="font-size: 8.3px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #8e8e96" x="228.384" y="293.58685" transform="rotate(-0 228.384 293.58685)">quickstart: server default</text>
+  </g>
+  <g id="text_37">
+   <text style="font-size: 10.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0d0d0f" x="389.376" y="279.81975" transform="rotate(-0 389.376 279.81975)">1,024-token prompt</text>
+  </g>
+  <g id="text_38">
+   <text style="font-size: 8.3px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #8e8e96" x="389.376" y="293.58685" transform="rotate(-0 389.376 293.58685)">quickstart runs -c 2048</text>
+  </g>
+  <g id="text_39">
+   <text style="font-weight: 700; font-size: 11.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #2340d0" x="550.368" y="280.2985" transform="rotate(-0 550.368 280.2985)">25,600 tokens</text>
+  </g>
+  <g id="text_40">
+   <text style="font-size: 8.3px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #2340d0; opacity: 0.85" x="550.368" y="293.58685" transform="rotate(-0 550.368 293.58685)">preregistered 25K claim passed</text>
+  </g>
+  <g id="text_41">
+   <text style="font-weight: 700; font-size: 10px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0d0d0f" x="26.208" y="321.31" transform="rotate(-0 26.208 321.31)">Languages</text>
+  </g>
+  <g id="text_42">
+   <text style="font-size: 10.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0d0d0f" x="228.384" y="315.45975" transform="rotate(-0 228.384 315.45975)">English</text>
+  </g>
+  <g id="text_43">
+   <text style="font-size: 8.3px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #8e8e96" x="228.384" y="329.22685" transform="rotate(-0 228.384 329.22685)">five English task families</text>
+  </g>
+  <g id="text_44">
+   <text style="font-size: 10.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0d0d0f" x="389.376" y="315.45975" transform="rotate(-0 389.376 315.45975)">English</text>
+  </g>
+  <g id="text_45">
+   <text style="font-size: 8.3px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #8e8e96" x="389.376" y="329.22685" transform="rotate(-0 389.376 329.22685)">English state required</text>
+  </g>
+  <g id="text_46">
+   <text style="font-weight: 700; font-size: 11.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #2340d0" x="550.368" y="315.9385" transform="rotate(-0 550.368 315.9385)">51 evaluated</text>
+  </g>
+  <g id="text_47">
+   <text style="font-size: 8.3px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #2340d0; opacity: 0.85" x="550.368" y="329.22685" transform="rotate(-0 550.368 329.22685)">MASSIVE locales; 19 in fine-tuning</text>
+  </g>
+  <g id="text_48">
+   <text style="font-weight: 700; font-size: 10px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0d0d0f" x="26.208" y="356.95" transform="rotate(-0 26.208 356.95)">Questions per state read</text>
+  </g>
+  <g id="text_49">
+   <text style="font-size: 10.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0d0d0f" x="228.384" y="351.09975" transform="rotate(-0 228.384 351.09975)">1</text>
+  </g>
+  <g id="text_50">
+   <text style="font-size: 8.3px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #8e8e96" x="228.384" y="364.86685" transform="rotate(-0 228.384 364.86685)">one question per prompt</text>
+  </g>
+  <g id="text_51">
+   <text style="font-size: 10.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0d0d0f" x="389.376" y="351.09975" transform="rotate(-0 389.376 351.09975)">1</text>
+  </g>
+  <g id="text_52">
+   <text style="font-size: 8.3px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #8e8e96" x="389.376" y="364.86685" transform="rotate(-0 389.376 364.86685)">one question per prompt</text>
+  </g>
+  <g id="text_53">
+   <text style="font-weight: 700; font-size: 11.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #2340d0" x="550.368" y="351.5785" transform="rotate(-0 550.368 351.5785)">Many</text>
+  </g>
+  <g id="text_54">
+   <text style="font-size: 8.3px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #2340d0; opacity: 0.85" x="550.368" y="364.86685" transform="rotate(-0 550.368 364.86685)">all questions in one call</text>
+  </g>
+  <g id="text_55">
+   <text style="font-weight: 700; font-size: 10px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0d0d0f" x="26.208" y="392.59" transform="rotate(-0 26.208 392.59)">Q4_K_M file</text>
+  </g>
+  <g id="text_56">
+   <text style="font-size: 10.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0d0d0f" x="228.384" y="386.73975" transform="rotate(-0 228.384 386.73975)">1.3 GB</text>
+  </g>
+  <g id="text_57">
+   <text style="font-size: 8.3px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #8e8e96" x="228.384" y="400.50685" transform="rotate(-0 228.384 400.50685)">as reported on the v1 GGUF card</text>
+  </g>
+  <g id="text_58">
+   <text style="font-size: 10.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0d0d0f" x="389.376" y="386.73975" transform="rotate(-0 389.376 386.73975)">1.27 GB</text>
+  </g>
+  <g id="text_59">
+   <text style="font-size: 8.3px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #8e8e96" x="389.376" y="400.50685" transform="rotate(-0 389.376 400.50685)">as reported on the v2 GGUF card</text>
+  </g>
+  <g id="text_60">
+   <text style="font-weight: 700; font-size: 11.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #2340d0" x="550.368" y="387.2185" transform="rotate(-0 550.368 387.2185)">0.53 GB</text>
+  </g>
+  <g id="text_61">
+   <text style="font-size: 8.3px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #2340d0; opacity: 0.85" x="550.368" y="400.50685" transform="rotate(-0 550.368 400.50685)">matches FP32 on 240/240 parity rows</text>
+  </g>
+  <g id="text_62">
+   <text style="font-weight: 700; font-size: 10px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0d0d0f" x="26.208" y="428.23" transform="rotate(-0 26.208 428.23)">Typed decisions, teacher agreement</text>
+  </g>
+  <g id="text_63">
+   <text style="font-size: 10.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0d0d0f" x="228.384" y="422.37975" transform="rotate(-0 228.384 422.37975)">53.35%</text>
+  </g>
+  <g id="text_64">
+   <text style="font-size: 8.3px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #8e8e96" x="228.384" y="436.14685" transform="rotate(-0 228.384 436.14685)">2,000 decisions / 400 states</text>
+  </g>
+  <g id="text_65">
+   <text style="font-size: 10.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #0d0d0f" x="389.376" y="422.37975" transform="rotate(-0 389.376 422.37975)">73.45%</text>
+  </g>
+  <g id="text_66">
+   <text style="font-size: 8.3px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #8e8e96" x="389.376" y="436.14685" transform="rotate(-0 389.376 436.14685)">same 2,000 decisions</text>
+  </g>
+  <g id="text_67">
+   <text style="font-weight: 700; font-size: 11.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #2340d0" x="550.368" y="422.8585" transform="rotate(-0 550.368 422.8585)">79.15%</text>
+  </g>
+  <g id="text_68">
+   <text style="font-size: 8.3px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #2340d0; opacity: 0.85" x="550.368" y="436.14685" transform="rotate(-0 550.368 436.14685)">same 2,000 · 1,583 correct</text>
+  </g>
+  <g id="text_69">
+   <text style="font-size: 7.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; fill: #8e8e96" transform="translate(26.208 479.156719)">v1/v2: as reported on their public Hugging Face cards (v1 GGUF card; v2 and v2-GGUF cards; v1's typed-decisions number is reported on the v2 card).</text>
+   <text style="font-size: 7.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; fill: #8e8e96" transform="translate(26.208 490.952344)">v3: release manifest, training config and eval files; Q4_K_M size = exported file (GB = 10^9 bytes), parity rows drawn from the training pool.</text>
+   <text style="font-size: 7.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; fill: #8e8e96" transform="translate(26.208 502.755586)">Typed decisions: same 2,000 decisions from 400 states; v1/v2 scored by the v2 card's harness, v3 by ours. In-domain for v3; v1 not trained on typed</text>
+   <text style="font-size: 7.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; fill: #8e8e96" transform="translate(26.208 514.543594)">decisions; v2's pool included typed workflow decisions. '51 evaluated' = MASSIVE locales (14 trained, 37 held out); fine-tuning covers 19 languages.</text>
+   <text style="font-size: 7.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Avenir Next', 'PingFang SC', 'Arial Unicode MS', 'DejaVu Sans', sans-serif; fill: #8e8e96" transform="translate(26.208 526.321055)">25,600 tokens = the runtime's whole-input limit; 25x = vs v2's 1,024-token prompt.</text>
+  </g>
+ </g>
+</svg>

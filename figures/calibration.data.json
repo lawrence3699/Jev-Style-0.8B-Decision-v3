@@ -1,0 +1,99 @@
+{
+ "chart": "calibration",
+ "metric": "49-suite macro NLL / Brier / ECE, as deployed (lower is better)",
+ "protocol_label": "v3: mixed (49 suites) / Laya: mixed (49 suites). Laya numbers: official checkpoints re-run by us on identical rows, shipped temperatures.",
+ "rows": [
+  {
+   "panel": "NLL",
+   "metric": "49-suite macro NLL, as deployed",
+   "n_rows": 17416,
+   "v3": 0.4928839178581892,
+   "best_laya": 2.212565130608199,
+   "best_laya_checkpoint": "multilingual",
+   "all_laya_checkpoints": {
+    "english": 9.669232280968933,
+    "typed": 7.344998151307391,
+    "multilingual": 2.212565130608199
+   },
+   "ratio_best_laya_over_v3": 4.48901871301224,
+   "diff_v3_minus_best": -1.7196812127500098,
+   "diff_ci95": [
+    -1.7632826815264786,
+    -1.6751892907984907
+   ],
+   "diff_ci_method": "case-cluster bootstrap within suites, 2000 resamples (scoreboard n_boot)",
+   "source_path": "runs/macjev/report_r2/scoreboard/scoreboard.json",
+   "fields": [
+    "metrics['t4.macro_nll'].ours_value",
+    "metrics['t4.macro_nll'].laya_best"
+   ],
+   "entries": [
+    "t4.macro_nll.v3",
+    "t4.macro_nll.laya_best"
+   ],
+   "claim": "t4.macro_nll_vs_best_laya"
+  },
+  {
+   "panel": "Brier score",
+   "metric": "49-suite macro Brier, as deployed",
+   "n_rows": 17416,
+   "v3": 0.23930092306086748,
+   "best_laya": 0.7120664110846202,
+   "best_laya_checkpoint": "multilingual",
+   "all_laya_checkpoints": {
+    "english": 1.0124090901595464,
+    "typed": 0.9474950671291875,
+    "multilingual": 0.7120664110846202
+   },
+   "ratio_best_laya_over_v3": 2.975610799894417,
+   "diff_v3_minus_best": -0.47276548802375273,
+   "diff_ci95": [
+    -0.4843787573639837,
+    -0.46074418926883626
+   ],
+   "diff_ci_method": "case-cluster bootstrap within suites, 2000 resamples (scoreboard n_boot)",
+   "source_path": "runs/macjev/report_r2/scoreboard/scoreboard.json",
+   "fields": [
+    "metrics['t4.macro_brier'].ours_value",
+    "metrics['t4.macro_brier'].laya_best"
+   ],
+   "entries": [
+    "t4.macro_brier.v3",
+    "t4.macro_brier.laya_best"
+   ],
+   "claim": "t4.macro_brier_vs_best_laya"
+  },
+  {
+   "panel": "ECE",
+   "metric": "49-suite macro ECE, as deployed",
+   "n_rows": 17416,
+   "v3": 0.05416919804670487,
+   "best_laya": 0.2994167384382702,
+   "best_laya_checkpoint": "multilingual",
+   "all_laya_checkpoints": {
+    "english": 0.4647782759946152,
+    "typed": 0.40828649732151606,
+    "multilingual": 0.2994167384382702
+   },
+   "ratio_best_laya_over_v3": 5.527435318132494,
+   "diff_v3_minus_best": -0.24524754039156535,
+   "diff_ci95": [
+    -0.24448168599481393,
+    -0.22893121774401398
+   ],
+   "diff_ci_method": "case-cluster bootstrap within suites, 2000 resamples (scoreboard n_boot)",
+   "source_path": "runs/macjev/report_r2/scoreboard/scoreboard.json",
+   "fields": [
+    "metrics['t4.macro_ece_as_deployed'].ours_value",
+    "metrics['t4.macro_ece_as_deployed'].laya_best"
+   ],
+   "entries": [
+    "t4.macro_ece_as_deployed.v3",
+    "t4.macro_ece_as_deployed.laya_best"
+   ],
+   "claim": "t4.macro_ece_as_deployed_vs_best_laya"
+  }
+ ],
+ "footnote": "Macro average over 49 suites, 17,416 identical rows for both models. Protocol: mixed for both v3 and Laya (in-domain on some suites, held-out on others). As deployed: v3 with its supplied deployment temperatures; Laya numbers: official checkpoints re-run by us on identical rows with their shipped temperatures. Best Laya = best of the three official checkpoints (English, typed-decisions, multilingual) per metric; multilingual is best on all three. Paired case-cluster bootstrap 95% CIs (2,000 resamples) of every v3 minus Laya difference exclude zero. Plotted values: figures/calibration.data.json.",
+ "not_plotted": "optional typed-decisions reliability diagram omitted (see agent report)"
+}

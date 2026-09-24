@@ -1,0 +1,486 @@
+{
+ "chart": "multilingual",
+ "metric": "per-language MASSIVE intent accuracy, argmax over 20 scored options, 100 rows/language",
+ "sources": {
+  "v3": "runs/macjev/received/20260924-0313/evals/main/test/massive51.jsonl",
+  "laya_multilingual": "runs/macjev/laya_baselines/multilingual/massive51.jsonl",
+  "chart_data_entry": "chart_data.json#massive51.per_language (re-verified against raw files)"
+ },
+ "protocol": "14 trained + 37 locales held out of MASSIVE training for v3; held-out for all Laya checkpoints. Laya numbers: official checkpoints re-run by us on identical rows, shipped temperatures. Wilson 95% CI per language (n=100)",
+ "chance": 0.05,
+ "three_x_chance": 0.15000000000000002,
+ "summary": {
+  "languages": 51,
+  "v3_beats_laya_multilingual": 51,
+  "v3_beats_best_laya_checkpoint": 51,
+  "v3_beats_laya_multilingual_never_trained": 37,
+  "v3_above_3x_chance": 51,
+  "laya_multilingual_above_3x_chance": 48,
+  "macro_v3": 0.7174509803921569,
+  "macro_laya_multilingual": 0.4007843137254902,
+  "macro_v3_never_trained37": 0.6551351351351351,
+  "macro_laya_multilingual_never_trained37": 0.36108108108108106,
+  "min_margin_vs_laya_multilingual": 0.11
+ },
+ "rows_plotted_sorted": [
+  {
+   "lang": "zh-CN",
+   "name": "Chinese (CN)",
+   "trained": true,
+   "v3": 0.95,
+   "laya_multilingual": 0.65,
+   "best_laya": 0.65,
+   "best_laya_ckpt": "multilingual"
+  },
+  {
+   "lang": "ja",
+   "name": "Japanese",
+   "trained": true,
+   "v3": 0.95,
+   "laya_multilingual": 0.64,
+   "best_laya": 0.64,
+   "best_laya_ckpt": "multilingual"
+  },
+  {
+   "lang": "es",
+   "name": "Spanish",
+   "trained": true,
+   "v3": 0.95,
+   "laya_multilingual": 0.58,
+   "best_laya": 0.58,
+   "best_laya_ckpt": "multilingual"
+  },
+  {
+   "lang": "ru",
+   "name": "Russian",
+   "trained": true,
+   "v3": 0.94,
+   "laya_multilingual": 0.57,
+   "best_laya": 0.57,
+   "best_laya_ckpt": "multilingual"
+  },
+  {
+   "lang": "en",
+   "name": "English",
+   "trained": true,
+   "v3": 0.93,
+   "laya_multilingual": 0.71,
+   "best_laya": 0.82,
+   "best_laya_ckpt": "english"
+  },
+  {
+   "lang": "zh-TW",
+   "name": "Chinese (TW)",
+   "trained": false,
+   "v3": 0.93,
+   "laya_multilingual": 0.61,
+   "best_laya": 0.61,
+   "best_laya_ckpt": "multilingual"
+  },
+  {
+   "lang": "de",
+   "name": "German",
+   "trained": true,
+   "v3": 0.93,
+   "laya_multilingual": 0.5,
+   "best_laya": 0.5,
+   "best_laya_ckpt": "multilingual"
+  },
+  {
+   "lang": "fr",
+   "name": "French",
+   "trained": true,
+   "v3": 0.9,
+   "laya_multilingual": 0.6,
+   "best_laya": 0.6,
+   "best_laya_ckpt": "typed"
+  },
+  {
+   "lang": "it",
+   "name": "Italian",
+   "trained": false,
+   "v3": 0.89,
+   "laya_multilingual": 0.52,
+   "best_laya": 0.52,
+   "best_laya_ckpt": "multilingual"
+  },
+  {
+   "lang": "pl",
+   "name": "Polish",
+   "trained": false,
+   "v3": 0.89,
+   "laya_multilingual": 0.5,
+   "best_laya": 0.5,
+   "best_laya_ckpt": "multilingual"
+  },
+  {
+   "lang": "ko",
+   "name": "Korean",
+   "trained": true,
+   "v3": 0.89,
+   "laya_multilingual": 0.47,
+   "best_laya": 0.47,
+   "best_laya_ckpt": "multilingual"
+  },
+  {
+   "lang": "pt",
+   "name": "Portuguese",
+   "trained": true,
+   "v3": 0.88,
+   "laya_multilingual": 0.5,
+   "best_laya": 0.5,
+   "best_laya_ckpt": "typed"
+  },
+  {
+   "lang": "hi",
+   "name": "Hindi",
+   "trained": true,
+   "v3": 0.87,
+   "laya_multilingual": 0.46,
+   "best_laya": 0.46,
+   "best_laya_ckpt": "multilingual"
+  },
+  {
+   "lang": "sv",
+   "name": "Swedish",
+   "trained": false,
+   "v3": 0.85,
+   "laya_multilingual": 0.49,
+   "best_laya": 0.49,
+   "best_laya_ckpt": "multilingual"
+  },
+  {
+   "lang": "ar",
+   "name": "Arabic",
+   "trained": true,
+   "v3": 0.85,
+   "laya_multilingual": 0.46,
+   "best_laya": 0.46,
+   "best_laya_ckpt": "multilingual"
+  },
+  {
+   "lang": "vi",
+   "name": "Vietnamese",
+   "trained": false,
+   "v3": 0.85,
+   "laya_multilingual": 0.34,
+   "best_laya": 0.34,
+   "best_laya_ckpt": "multilingual"
+  },
+  {
+   "lang": "fa",
+   "name": "Persian",
+   "trained": false,
+   "v3": 0.84,
+   "laya_multilingual": 0.51,
+   "best_laya": 0.51,
+   "best_laya_ckpt": "multilingual"
+  },
+  {
+   "lang": "id",
+   "name": "Indonesian",
+   "trained": false,
+   "v3": 0.84,
+   "laya_multilingual": 0.51,
+   "best_laya": 0.51,
+   "best_laya_ckpt": "multilingual"
+  },
+  {
+   "lang": "tr",
+   "name": "Turkish",
+   "trained": true,
+   "v3": 0.83,
+   "laya_multilingual": 0.4,
+   "best_laya": 0.4,
+   "best_laya_ckpt": "multilingual"
+  },
+  {
+   "lang": "nl",
+   "name": "Dutch",
+   "trained": false,
+   "v3": 0.82,
+   "laya_multilingual": 0.47,
+   "best_laya": 0.47,
+   "best_laya_ckpt": "multilingual"
+  },
+  {
+   "lang": "nb",
+   "name": "Norwegian",
+   "trained": false,
+   "v3": 0.81,
+   "laya_multilingual": 0.56,
+   "best_laya": 0.56,
+   "best_laya_ckpt": "multilingual"
+  },
+  {
+   "lang": "da",
+   "name": "Danish",
+   "trained": false,
+   "v3": 0.81,
+   "laya_multilingual": 0.52,
+   "best_laya": 0.52,
+   "best_laya_ckpt": "multilingual"
+  },
+  {
+   "lang": "ro",
+   "name": "Romanian",
+   "trained": false,
+   "v3": 0.77,
+   "laya_multilingual": 0.37,
+   "best_laya": 0.37,
+   "best_laya_ckpt": "multilingual"
+  },
+  {
+   "lang": "af",
+   "name": "Afrikaans",
+   "trained": false,
+   "v3": 0.76,
+   "laya_multilingual": 0.35,
+   "best_laya": 0.35,
+   "best_laya_ckpt": "multilingual"
+  },
+  {
+   "lang": "ta",
+   "name": "Tamil",
+   "trained": true,
+   "v3": 0.74,
+   "laya_multilingual": 0.31,
+   "best_laya": 0.31,
+   "best_laya_ckpt": "multilingual"
+  },
+  {
+   "lang": "sw",
+   "name": "Swahili",
+   "trained": true,
+   "v3": 0.74,
+   "laya_multilingual": 0.23,
+   "best_laya": 0.23,
+   "best_laya_ckpt": "multilingual"
+  },
+  {
+   "lang": "ms",
+   "name": "Malay",
+   "trained": false,
+   "v3": 0.73,
+   "laya_multilingual": 0.41,
+   "best_laya": 0.41,
+   "best_laya_ckpt": "multilingual"
+  },
+  {
+   "lang": "el",
+   "name": "Greek",
+   "trained": false,
+   "v3": 0.72,
+   "laya_multilingual": 0.44,
+   "best_laya": 0.44,
+   "best_laya_ckpt": "multilingual"
+  },
+  {
+   "lang": "he",
+   "name": "Hebrew",
+   "trained": false,
+   "v3": 0.72,
+   "laya_multilingual": 0.37,
+   "best_laya": 0.37,
+   "best_laya_ckpt": "multilingual"
+  },
+  {
+   "lang": "ur",
+   "name": "Urdu",
+   "trained": false,
+   "v3": 0.7,
+   "laya_multilingual": 0.42,
+   "best_laya": 0.42,
+   "best_laya_ckpt": "multilingual"
+  },
+  {
+   "lang": "az",
+   "name": "Azerbaijani",
+   "trained": false,
+   "v3": 0.66,
+   "laya_multilingual": 0.36,
+   "best_laya": 0.36,
+   "best_laya_ckpt": "multilingual"
+  },
+  {
+   "lang": "bn",
+   "name": "Bengali",
+   "trained": false,
+   "v3": 0.65,
+   "laya_multilingual": 0.45,
+   "best_laya": 0.45,
+   "best_laya_ckpt": "multilingual"
+  },
+  {
+   "lang": "sl",
+   "name": "Slovenian",
+   "trained": false,
+   "v3": 0.65,
+   "laya_multilingual": 0.37,
+   "best_laya": 0.37,
+   "best_laya_ckpt": "multilingual"
+  },
+  {
+   "lang": "th",
+   "name": "Thai",
+   "trained": false,
+   "v3": 0.64,
+   "laya_multilingual": 0.48,
+   "best_laya": 0.48,
+   "best_laya_ckpt": "multilingual"
+  },
+  {
+   "lang": "hu",
+   "name": "Hungarian",
+   "trained": false,
+   "v3": 0.63,
+   "laya_multilingual": 0.36,
+   "best_laya": 0.36,
+   "best_laya_ckpt": "multilingual"
+  },
+  {
+   "lang": "te",
+   "name": "Telugu",
+   "trained": false,
+   "v3": 0.62,
+   "laya_multilingual": 0.22,
+   "best_laya": 0.22,
+   "best_laya_ckpt": "multilingual"
+  },
+  {
+   "lang": "kn",
+   "name": "Kannada",
+   "trained": false,
+   "v3": 0.61,
+   "laya_multilingual": 0.3,
+   "best_laya": 0.3,
+   "best_laya_ckpt": "multilingual"
+  },
+  {
+   "lang": "fi",
+   "name": "Finnish",
+   "trained": false,
+   "v3": 0.6,
+   "laya_multilingual": 0.34,
+   "best_laya": 0.34,
+   "best_laya_ckpt": "multilingual"
+  },
+  {
+   "lang": "jv",
+   "name": "Javanese",
+   "trained": false,
+   "v3": 0.6,
+   "laya_multilingual": 0.3,
+   "best_laya": 0.3,
+   "best_laya_ckpt": "multilingual"
+  },
+  {
+   "lang": "hy",
+   "name": "Armenian",
+   "trained": false,
+   "v3": 0.59,
+   "laya_multilingual": 0.25,
+   "best_laya": 0.25,
+   "best_laya_ckpt": "multilingual"
+  },
+  {
+   "lang": "ka",
+   "name": "Georgian",
+   "trained": false,
+   "v3": 0.56,
+   "laya_multilingual": 0.15,
+   "best_laya": 0.15,
+   "best_laya_ckpt": "multilingual"
+  },
+  {
+   "lang": "tl",
+   "name": "Tagalog",
+   "trained": false,
+   "v3": 0.54,
+   "laya_multilingual": 0.35,
+   "best_laya": 0.35,
+   "best_laya_ckpt": "multilingual"
+  },
+  {
+   "lang": "km",
+   "name": "Khmer",
+   "trained": false,
+   "v3": 0.54,
+   "laya_multilingual": 0.2,
+   "best_laya": 0.2,
+   "best_laya_ckpt": "multilingual"
+  },
+  {
+   "lang": "sq",
+   "name": "Albanian",
+   "trained": false,
+   "v3": 0.52,
+   "laya_multilingual": 0.3,
+   "best_laya": 0.3,
+   "best_laya_ckpt": "multilingual"
+  },
+  {
+   "lang": "ml",
+   "name": "Malayalam",
+   "trained": false,
+   "v3": 0.52,
+   "laya_multilingual": 0.28,
+   "best_laya": 0.28,
+   "best_laya_ckpt": "multilingual"
+  },
+  {
+   "lang": "lv",
+   "name": "Latvian",
+   "trained": false,
+   "v3": 0.51,
+   "laya_multilingual": 0.31,
+   "best_laya": 0.31,
+   "best_laya_ckpt": "multilingual"
+  },
+  {
+   "lang": "is",
+   "name": "Icelandic",
+   "trained": false,
+   "v3": 0.5,
+   "laya_multilingual": 0.35,
+   "best_laya": 0.35,
+   "best_laya_ckpt": "multilingual"
+  },
+  {
+   "lang": "my",
+   "name": "Burmese",
+   "trained": false,
+   "v3": 0.46,
+   "laya_multilingual": 0.16,
+   "best_laya": 0.16,
+   "best_laya_ckpt": "multilingual"
+  },
+  {
+   "lang": "cy",
+   "name": "Welsh",
+   "trained": false,
+   "v3": 0.37,
+   "laya_multilingual": 0.13,
+   "best_laya": 0.17,
+   "best_laya_ckpt": "typed"
+  },
+  {
+   "lang": "mn",
+   "name": "Mongolian",
+   "trained": false,
+   "v3": 0.28,
+   "laya_multilingual": 0.16,
+   "best_laya": 0.16,
+   "best_laya_ckpt": "multilingual"
+  },
+  {
+   "lang": "am",
+   "name": "Amharic",
+   "trained": false,
+   "v3": 0.26,
+   "laya_multilingual": 0.15,
+   "best_laya": 0.16,
+   "best_laya_ckpt": "typed"
+  }
+ ]
+}

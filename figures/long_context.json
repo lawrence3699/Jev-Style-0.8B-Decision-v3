@@ -1,0 +1,216 @@
+{
+ "figure": "long_context",
+ "plotted": [
+  {
+   "length_bin": 1024,
+   "items": 320,
+   "controlled_pct": 57.81,
+   "ci95_pct": [
+    52.34,
+    63.1
+   ]
+  },
+  {
+   "length_bin": 2048,
+   "items": 320,
+   "controlled_pct": 54.69,
+   "ci95_pct": [
+    49.21,
+    60.05
+   ]
+  },
+  {
+   "length_bin": 4096,
+   "items": 320,
+   "controlled_pct": 58.13,
+   "ci95_pct": [
+    52.65,
+    63.4
+   ]
+  },
+  {
+   "length_bin": 8192,
+   "items": 320,
+   "controlled_pct": 54.37,
+   "ci95_pct": [
+    48.9,
+    59.75
+   ]
+  },
+  {
+   "length_bin": 12288,
+   "items": 320,
+   "controlled_pct": 54.37,
+   "ci95_pct": [
+    48.9,
+    59.75
+   ]
+  },
+  {
+   "length_bin": 16384,
+   "items": 320,
+   "controlled_pct": 54.69,
+   "ci95_pct": [
+    49.21,
+    60.05
+   ]
+  },
+  {
+   "length_bin": 24576,
+   "items": 1280,
+   "controlled_pct": 55.31,
+   "ci95_pct": [
+    52.58,
+    58.02
+   ]
+  }
+ ],
+ "reference_controlled_2k_4k_pct": 56.41,
+ "gap_24k_vs_ref_pts": -1.09,
+ "spread_all_bins_pts": 3.75,
+ "claim_25k_ok": true,
+ "a_gap_ok": true,
+ "b_deciles_ok": true,
+ "c_controls_ok": true,
+ "verified_length_bin": 4096,
+ "caution": "verified_length_bin = 4096: the stricter every-bin (8K-16K) decile criterion fails in some deciles; the card may say 'preregistered 25K claim passed' but not 'verified at every length'",
+ "controlled_24k_by_decile": {
+  "0": 0.5234375,
+  "1": 0.515625,
+  "2": 0.546875,
+  "3": 0.5390625,
+  "4": 0.5546875,
+  "5": 0.5546875,
+  "6": 0.5703125,
+  "7": 0.5625,
+  "8": 0.5390625,
+  "9": 0.625
+ },
+ "controls_pooled_by_length": {
+  "1024": {
+   "question_only": {
+    "n": 320,
+    "accuracy": 0.290625,
+    "chance": 0.28003348214285717,
+    "p_above_chance": 0.3511374281963401,
+    "at_chance": true
+   },
+   "state_swap": {
+    "n": 320,
+    "accuracy": 0.315625,
+    "chance": 0.28003348214285717,
+    "p_above_chance": 0.07484199516389486,
+    "at_chance": true
+   }
+  },
+  "2048": {
+   "question_only": {
+    "n": 320,
+    "accuracy": 0.2875,
+    "chance": 0.28029017857142857,
+    "p_above_chance": 0.40558180434986946,
+    "at_chance": true
+   },
+   "state_swap": {
+    "n": 320,
+    "accuracy": 0.303125,
+    "chance": 0.28029017857142857,
+    "p_above_chance": 0.18406466252955953,
+    "at_chance": true
+   }
+  },
+  "4096": {
+   "question_only": {
+    "n": 320,
+    "accuracy": 0.253125,
+    "chance": 0.28010044642857146,
+    "p_above_chance": 0.8864307901965104,
+    "at_chance": true
+   },
+   "state_swap": {
+    "n": 320,
+    "accuracy": 0.29375,
+    "chance": 0.28010044642857146,
+    "p_above_chance": 0.304486548332512,
+    "at_chance": true
+   }
+  },
+  "8192": {
+   "question_only": {
+    "n": 320,
+    "accuracy": 0.28125,
+    "chance": 0.28131324404761904,
+    "p_above_chance": 0.5273741085290076,
+    "at_chance": true
+   },
+   "state_swap": {
+    "n": 320,
+    "accuracy": 0.284375,
+    "chance": 0.28131324404761904,
+    "p_above_chance": 0.4747527191420883,
+    "at_chance": true
+   }
+  },
+  "12288": {
+   "question_only": {
+    "n": 320,
+    "accuracy": 0.278125,
+    "chance": 0.2804017857142857,
+    "p_above_chance": 0.5644923218252806,
+    "at_chance": true
+   },
+   "state_swap": {
+    "n": 320,
+    "accuracy": 0.284375,
+    "chance": 0.2804017857142857,
+    "p_above_chance": 0.4593971620159274,
+    "at_chance": true
+   }
+  },
+  "16384": {
+   "question_only": {
+    "n": 320,
+    "accuracy": 0.265625,
+    "chance": 0.28533854166666667,
+    "p_above_chance": 0.8139517721332229,
+    "at_chance": true
+   },
+   "state_swap": {
+    "n": 320,
+    "accuracy": 0.28125,
+    "chance": 0.28533854166666667,
+    "p_above_chance": 0.5936977453471026,
+    "at_chance": true
+   }
+  },
+  "24576": {
+   "question_only": {
+    "n": 1280,
+    "accuracy": 0.2890625,
+    "chance": 0.2837481398809524,
+    "p_above_chance": 0.33937799270227736,
+    "at_chance": true
+   },
+   "state_swap": {
+    "n": 1280,
+    "accuracy": 0.28515625,
+    "chance": 0.2837481398809524,
+    "p_above_chance": 0.4658977510199284,
+    "at_chance": true
+   }
+  }
+ },
+ "laya_budgets": {
+  "laya_english": 512,
+  "laya_multilingual": 1024,
+  "laya_typed_decisions": 1024,
+  "source": "third_party/laya/README.md lines 366-368 (defaults); models/laya-official/.../multilingual/rl_agent_config.json max_len 1024"
+ },
+ "v3_context_tokens": 25600,
+ "sources": [
+  "runs/macjev/received/own_evals/main/test.own/long_grid_plus.jsonl + runs/macjev/received/own_evals/main/temperatures.json via macjev.eval.aggregate.suite_metrics('long_grid_plus') (recomputed); matches runs/macjev/report_r2/scoreboard/scoreboard.json long_grid_plus",
+  "chart_data.json#long_grid_plus.bins"
+ ],
+ "protocol_label": "v3 only (Laya cannot run >4K; not applicable). Controlled = real row correct AND question_only + state_swap controls pass; Wilson CI; 2K-4K reference; preregistered 2026-09-24, amended pre-data (+96 items per 24K decile, thresholds unchanged)",
+ "footnote": "v3 only. Laya's default input budget is 512 tokens (English) / 1,024 (multilingual, typed) per the Laya README;\nlonger rows exceed Laya's default budgets, so Laya is not plotted. Suite long_grid_plus: preregistered 2026-09-24, amended pre-data\n(+96 items per 24K depth decile, thresholds unchanged); 320 items per bin, 1,280 at 24K. Controlled accuracy = real-state\nanswer correct AND its question-only and state-swap controls pass; both controls are at chance in every length bin.\n25K claim rule: |24K \u2212 2K\u20134K reference| \u2264 5 pts and every 24K evidence-depth decile within 10 pts of it.\nPlotted values: figures/long_context.json (bin-level controlled accuracy and CIs)."
+}

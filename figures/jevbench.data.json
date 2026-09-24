@@ -1,0 +1,60 @@
+{
+ "chart": "jevbench",
+ "metric": "JevBench v1.4.1 public accuracy (231 items)",
+ "rows": [
+  {
+   "label": "Jev-Style 0.8B v3",
+   "key": "v3",
+   "accuracy": 0.6406926406926406,
+   "correct": 148,
+   "n": 231,
+   "colour": "#3456F0",
+   "source": "runs/macjev/received/ext_evals/main/jevbench/results.json :: public_accuracy"
+  },
+  {
+   "label": "Qwen3.5-0.8B Decision Model (M. Ghafiri)",
+   "key": "mghafiri-qwen3.5-0.8b-decision-model",
+   "accuracy": 0.5930735930735931,
+   "correct": 137,
+   "n": 231,
+   "colour": "#C4C4CB",
+   "source": "data/external/jevbench_v1.4.1/results/v1.4.1/jevbench-v1.4.1-results.json :: systems[key=mghafiri-qwen3.5-0.8b-decision-model].public_accuracy",
+   "v3_lead_pts": 4.76
+  },
+  {
+   "label": "Laya (ModernBERT-large, 421M)",
+   "key": "laya",
+   "accuracy": 0.5844155844155844,
+   "correct": 135,
+   "n": 231,
+   "colour": "#D0D0D6",
+   "source": "data/external/jevbench_v1.4.1/results/v1.4.1/jevbench-v1.4.1-results.json :: systems[key=laya].public_accuracy",
+   "v3_lead_pts": 5.63
+  },
+  {
+   "label": "SimpleJev (Qwen3.5-0.8B)",
+   "key": "simplejev-qwen3.5-0.8b",
+   "accuracy": 0.5454545454545454,
+   "correct": 126,
+   "n": 231,
+   "colour": "#C4C4CB",
+   "source": "data/external/jevbench_v1.4.1/results/v1.4.1/jevbench-v1.4.1-results.json :: systems[key=simplejev-qwen3.5-0.8b].public_accuracy",
+   "v3_lead_pts": 9.52
+  }
+ ],
+ "footnote": "JevBench v1.4.1, public items only (231). v3: self-run zero-shot with the vendored official harness (commit 24b9b5c); training-pool contamination scan: 0 hits; not an official leaderboard entry. Other rows: public accuracy as published in the board's v1.4.1 results file (github.com/fstandhartinger/jevbench). Shown: Laya plus every Qwen3.5-0.8B-based system on the board. Laya and M. Ghafiri lie inside v3's 95% CI (57.7\u201370.0%, Wilson): those two leads are point estimates, not significant at n = 231.",
+ "v3_run": {
+  "source_path": "runs/macjev/received/ext_evals/main/jevbench/results.json",
+  "field": "public_accuracy (148/231; independent check equal)",
+  "protocol_label": "v3 self-run with the vendored official harness on the 231 public items, zero-shot (contamination scan of the training pool: 0 hits, runs/macjev/external/jevbench/contamination.json); other rows as published in jevbench v1.4.1 results.json (full runs by the board); not an official leaderboard entry",
+  "ci95": [
+   0.577,
+   0.6998
+  ],
+  "ci_method": "Wilson 95%"
+ },
+ "board": {
+  "source_path": "data/external/jevbench_v1.4.1/results/v1.4.1/jevbench-v1.4.1-results.json",
+  "protocol_label": "as published by the board (commit 24b9b5c1609a, tag v1.4.1)"
+ }
+}

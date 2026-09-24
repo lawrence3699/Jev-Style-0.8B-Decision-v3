@@ -1,0 +1,185 @@
+{
+  "format": "jev-style-release-v1",
+  "model_name": "Jev-Style-0.8B-Decision-v3",
+  "repo": "chaoliangUNSW/Jev-Style-0.8B-Decision-v3",
+  "generation": "v3 (third generation of the Jev-Style decision series)",
+  "lineage": {
+    "v1": "chaoliangUNSW/Jev-Style-Qwen3.5-2B-Decision",
+    "v1_public_gguf": "chaoliangUNSW/Jev-Style-Qwen3.5-2B-Decision-GGUF",
+    "v2": "chaoliangUNSW/Jev-Style-Qwen3.5-2B-Decision-v2",
+    "v3": "chaoliangUNSW/Jev-Style-0.8B-Decision-v3"
+  },
+  "base_model": "Qwen/Qwen3.5-0.8B",
+  "base_model_revision": "2fc06364715b967f1860aea9cf38778875588b17",
+  "base_model_relation": "finetune",
+  "architecture": "Qwen3_5ForCausalLM (text only, 24 layers: 18 Gated DeltaNet + 6 full attention, hidden 1024, tied embeddings, 752,393,024 parameters)",
+  "readout": "verdict",
+  "template": "macjev-render-v1",
+  "readout_config": "readout_config.json",
+  "budgets": {
+    "max_len": 25600,
+    "head_max": 2048
+  },
+  "source": {
+    "checkpoint_sha256": {
+      "best-0.safetensors": "b10d249adfa3e1475f0f633ab961130c06f16c898db23c846b035d24bdc5c945"
+    },
+    "text_only_model_safetensors_sha256": "0f8c861605dcdfb356a63e056baa2106e81042e8981e8d0d26fe50b34599541e",
+    "release_manifest_sha256": "4bc9f89795ccf2d749008de7739bc5294f3ec543404ca2db9cac6a3914cfb84a",
+    "llama_cpp_commit": "441df11f65ea0b6d0c72965aaf70c8241070ddcb",
+    "mlx": "0.32.2",
+    "mlx_lm": "0.31.3"
+  },
+  "calibration": {
+    "version": "macjev-temperatures-v1",
+    "global_T": 0.8800546821789332,
+    "groups": 20,
+    "n_rows": 15655,
+    "fit_quality": {
+      "nll_before": 0.37752055301970966,
+      "nll_after": 0.36671188108641545,
+      "ece_before": 0.03289307373502533,
+      "ece_after": 0.011376234101433989,
+      "n": 15655
+    },
+    "fitted_on": "calibration pool (dev/cal rows, never test rows)"
+  },
+  "g5_parity": {
+    "reference": "PyTorch float32 (same weights, same rendered inputs)",
+    "rows": 240,
+    "rows_note": "non-sealed training-distribution rows, 22 categories, en 215 / zh 25",
+    "report_sha256": "056dc3a3d1de5616f97dab3f8b5ec1f7e2c6c85258aa03f2a57b9fd65a71022b",
+    "g5_pass": true,
+    "verdict_readout": {
+      "gguf-f16": {
+        "top1_agreement": 1.0,
+        "dnll": 2.436279701012456e-05,
+        "n": 240,
+        "nan_rows": 0,
+        "gate": "top1>=0.99, |dNLL|<=0.02, no NaN, every reference row scored",
+        "pass": true
+      },
+      "gguf-q8_0": {
+        "top1_agreement": 1.0,
+        "dnll": -3.093173930673876e-05,
+        "n": 240,
+        "nan_rows": 0,
+        "gate": "top1>=0.98, |dNLL|<=0.02, no NaN, every reference row scored",
+        "pass": true
+      },
+      "gguf-q4_k_m": {
+        "top1_agreement": 1.0,
+        "dnll": 0.006187511546346225,
+        "n": 240,
+        "nan_rows": 0,
+        "gate": "report_only",
+        "pass": true
+      },
+      "mlx-bf16": {
+        "top1_agreement": 1.0,
+        "dnll": 0.00031018251516545803,
+        "n": 240,
+        "nan_rows": 0,
+        "gate": "top1>=0.99, |dNLL|<=0.02, no NaN, every reference row scored",
+        "pass": true
+      },
+      "mlx-bf16-f32act": {
+        "top1_agreement": 1.0,
+        "dnll": 0.00015659911501769708,
+        "n": 240,
+        "nan_rows": 0,
+        "gate": "top1>=0.99, |dNLL|<=0.02, no NaN, every reference row scored",
+        "pass": true
+      },
+      "mlx-8bit": {
+        "top1_agreement": 1.0,
+        "dnll": 0.00023178691602621093,
+        "n": 240,
+        "nan_rows": 0,
+        "gate": "top1>=0.98, |dNLL|<=0.02, no NaN, every reference row scored",
+        "pass": true
+      },
+      "mlx-4bit": {
+        "top1_agreement": 0.9875,
+        "dnll": 0.010326217052955111,
+        "n": 240,
+        "nan_rows": 0,
+        "gate": "report_only",
+        "pass": true
+      }
+    },
+    "gates": "top-1 >= 0.99 (16-bit) / >= 0.98 (8-bit), |dNLL| <= 0.02, no NaN; 4-bit report-only"
+  },
+  "decision_index": "not run for this release (optional follow-up)",
+  "related_repos": {
+    "main": "chaoliangUNSW/Jev-Style-0.8B-Decision-v3",
+    "gguf": "chaoliangUNSW/Jev-Style-0.8B-Decision-v3-GGUF",
+    "mlx": "chaoliangUNSW/Jev-Style-0.8B-Decision-v3-MLX"
+  },
+  "not_released": {
+    "mlx-4bit": "affine4-g64 reported only (G5 top-1 0.9875, report-only gate); not released"
+  },
+  "tested_with": {
+    "python": "3.12",
+    "torch": "2.14.0",
+    "transformers": "5.17.0",
+    "tokenizers": "0.23.2",
+    "numpy": "2.5.3",
+    "mlx": "0.32.2",
+    "mlx-lm": "0.31.3",
+    "llama.cpp": "441df11f65ea0b6d0c72965aaf70c8241070ddcb"
+  },
+  "weights": {
+    "model.safetensors": "bfloat16 (text-only export of the trained checkpoint)"
+  },
+  "runtime": {
+    "script": "jev_style_decision.py",
+    "class": "JevStyleDecision",
+    "default_dtype": "float32",
+    "devices": [
+      "cuda",
+      "mps",
+      "cpu"
+    ],
+    "long_inputs": "query-chunked SDPA on MPS/CPU (1024 queries per chunk)"
+  },
+  "runtime_parity": {
+    "protocol": "2026-09-24: each runtime script run in a clean subprocess (cwd = repo folder, empty PYTHONPATH, HF_HUB_OFFLINE=1, --verify) on 24 fixed parity-fixture rows (every 10th of the 240 G5 rows; 12 categories families, choice/score/noul, 92-8156 tokens) and compared with the reference (training-code) scorer of the same format on the same inputs, probabilities with the same calibration temperature; plus 2 synthetic long states (16,381 and 25,582 tokens). Rendered token ids identical to the reference renderer on 244/244 rows (240 fixture rows + 4 adversarial special-token/unicode rows). Re-run 2026-09-24 after the rename to Jev-Style-0.8B-Decision-v3, the no-category = global-temperature default and the GGUF general.name metadata edit: all six formats again identical to the reference scorer run on the original (pre-edit) files (max |prob diff| 0.0 same backend, 0 top-1 changes). Re-run 2026-09-25 after the GGUF decide_many fix (runtime code change in decide_many only, docstrings in all scripts): all six formats gave outputs identical (0.0) to the 2026-09-24 run on the 24 rows.",
+    "results": {
+      "torch-fp32-cpu": {
+        "rows": 24,
+        "errors": 0,
+        "vs_reference_same_backend": {
+          "max_abs_prob_diff": 0.0,
+          "max_abs_score_diff": 0.0,
+          "top1_changes": 0,
+          "top1_agreement": 1.0
+        },
+        "vs_reference_torch_fp32": {
+          "max_abs_prob_diff": 0.0,
+          "max_abs_score_diff": 0.0,
+          "top1_changes": 0,
+          "top1_agreement": 1.0
+        }
+      },
+      "torch-fp32-mps-long": {
+        "long16384:torch-mps-fp32": {
+          "tokens": 16381,
+          "answer_matches_gguf_mlx": true,
+          "max_abs_prob_diff_vs_gguf_f16": 0.0004853327842702093
+        },
+        "long25600:torch-mps-fp32": {
+          "tokens": 25582,
+          "answer_matches_gguf_mlx": true,
+          "max_abs_prob_diff_vs_gguf_f16": 0.0002457350394169111
+        }
+      },
+      "render_token_identity": {
+        "rows": 244,
+        "identical": 244,
+        "different": 0,
+        "bad": []
+      }
+    }
+  }
+}

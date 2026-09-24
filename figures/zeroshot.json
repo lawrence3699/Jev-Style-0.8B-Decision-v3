@@ -1,0 +1,58 @@
+{
+ "chart": "zeroshot",
+ "metric": "accuracy (argmax over the set's labels; all rows, none unsupported)",
+ "plotted": {
+  "tweet_topic": {
+   "v3": 75.49,
+   "laya_en": 63.2,
+   "delta_pts_vs_laya_en": 12.29
+  },
+  "fin_topic": {
+   "v3": 46.71,
+   "laya_en": 34.2,
+   "delta_pts_vs_laya_en": 12.51
+  }
+ },
+ "jev_marker": {
+  "set": "tweet_topic",
+  "jev": 79.33,
+  "gap_pts": 3.84
+ },
+ "v3_recomputed": {
+  "tweet_topic": {
+   "correct": 1278,
+   "n": 1693,
+   "ci95": [
+    0.7341996455995274,
+    0.7749556999409333
+   ]
+  },
+  "fin_topic": {
+   "correct": 1923,
+   "n": 4117,
+   "ci95": [
+    0.45202817585620597,
+    0.48239008987126547
+   ]
+  }
+ },
+ "entries": [
+  "zeroshot.tweet_topic.accuracy.v3",
+  "zeroshot.tweet_topic.accuracy.laya_en",
+  "zeroshot.tweet_topic.accuracy.jev",
+  "zeroshot.fin_topic.accuracy.v3",
+  "zeroshot.fin_topic.accuracy.laya_en",
+  "zeroshot.fin_topic.accuracy.jev"
+ ],
+ "claims": [
+  "tweet_topic_accuracy_vs_laya_en",
+  "fin_topic_accuracy_vs_laya_en",
+  "tweet_topic_accuracy_vs_jev"
+ ],
+ "sources": {
+  "v3": "runs/macjev/received/ext_evals/main/zeroshot_topics/metrics.json comparison.clean[*].ours.accuracy; recomputed from ext.zeroshot.<set>.jsonl",
+  "jev_laya_en": "src/macjev/eval/external/zeroshot_topics.py PUBLISHED = elcronos results/cross_dataset_summary.json @ a1901bc3d520e73936de8d4326545c0cdcf742fb"
+ },
+ "not_plotted_on_purpose": "Jev on fin_topic (not a win, not within 5 pts); macro-F1 vs Jev",
+ "footnote": "Zero-shot for every system: neither set is in v3's training pool; accuracy over every row of the pinned test files. Jev (1.13, API) and English Laya: numbers published by the elcronos jev-vs-open-decision-models study with its own prompt (results/cross_dataset_summary.json @ a1901bc), not re-run by us. v3: scored by us on the identical rows, label sets and instruction, in v3's own input format."
+}

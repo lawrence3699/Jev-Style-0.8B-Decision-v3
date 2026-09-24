@@ -1,0 +1,175 @@
+{
+ "chart": "design_table",
+ "columns": [
+  "Jev-Style 2B v1",
+  "Jev-Style 2B v2",
+  "Jev-Style 0.8B v3"
+ ],
+ "rows": [
+  {
+   "row": "Parameters",
+   "Jev-Style 2B v1": {
+    "main": "2B",
+    "sub": "Qwen3.5-2B-Base"
+   },
+   "Jev-Style 2B v2": {
+    "main": "2B",
+    "sub": "continued from v1"
+   },
+   "Jev-Style 0.8B v3": {
+    "main": "0.8B",
+    "sub": "752M text-model params"
+   }
+  },
+  {
+   "row": "Training",
+   "Jev-Style 2B v1": {
+    "main": "LoRA rank 16",
+    "sub": "all linear layers"
+   },
+   "Jev-Style 2B v2": {
+    "main": "LoRA rank 32",
+    "sub": "33.6M trainable params"
+   },
+   "Jev-Style 0.8B v3": {
+    "main": "Full fine-tune",
+    "sub": "every weight trained"
+   }
+  },
+  {
+   "row": "Readout",
+   "Jev-Style 2B v1": {
+    "main": "Option-letter token",
+    "sub": "one letter per option"
+   },
+   "Jev-Style 2B v2": {
+    "main": "Option-letter token",
+    "sub": "' A' ... ' Z'"
+   },
+   "Jev-Style 0.8B v3": {
+    "main": "Verdict slot per option",
+    "sub": "every option scored, one pass"
+   }
+  },
+  {
+   "row": "Options per decision",
+   "Jev-Style 2B v1": {
+    "main": "Up to 26",
+    "sub": "20 via top_logprobs"
+   },
+   "Jev-Style 2B v2": {
+    "main": "2-26",
+    "sub": "letter-capped"
+   },
+   "Jev-Style 0.8B v3": {
+    "main": "No letter cap",
+    "sub": "tested with 77 options"
+   }
+  },
+  {
+   "row": "Context",
+   "Jev-Style 2B v1": {
+    "main": "Not stated",
+    "sub": "quickstart: server default"
+   },
+   "Jev-Style 2B v2": {
+    "main": "1,024-token prompt",
+    "sub": "quickstart runs -c 2048"
+   },
+   "Jev-Style 0.8B v3": {
+    "main": "25,600 tokens",
+    "sub": "preregistered 25K claim passed"
+   }
+  },
+  {
+   "row": "Languages",
+   "Jev-Style 2B v1": {
+    "main": "English",
+    "sub": "five English task families"
+   },
+   "Jev-Style 2B v2": {
+    "main": "English",
+    "sub": "English state required"
+   },
+   "Jev-Style 0.8B v3": {
+    "main": "51 evaluated",
+    "sub": "MASSIVE locales; 19 in fine-tuning"
+   }
+  },
+  {
+   "row": "Questions per state read",
+   "Jev-Style 2B v1": {
+    "main": "1",
+    "sub": "one question per prompt"
+   },
+   "Jev-Style 2B v2": {
+    "main": "1",
+    "sub": "one question per prompt"
+   },
+   "Jev-Style 0.8B v3": {
+    "main": "Many",
+    "sub": "all questions in one call"
+   }
+  },
+  {
+   "row": "Q4_K_M file",
+   "Jev-Style 2B v1": {
+    "main": "1.3 GB",
+    "sub": "as reported on the v1 GGUF card"
+   },
+   "Jev-Style 2B v2": {
+    "main": "1.27 GB",
+    "sub": "as reported on the v2 GGUF card"
+   },
+   "Jev-Style 0.8B v3": {
+    "main": "0.53 GB",
+    "sub": "matches FP32 on 240/240 parity rows"
+   }
+  },
+  {
+   "row": "Typed decisions, teacher agreement",
+   "Jev-Style 2B v1": {
+    "main": "53.35%",
+    "sub": "2,000 decisions / 400 states"
+   },
+   "Jev-Style 2B v2": {
+    "main": "73.45%",
+    "sub": "same 2,000 decisions"
+   },
+   "Jev-Style 0.8B v3": {
+    "main": "79.15%",
+    "sub": "same 2,000 \u00b7 1,583 correct"
+   }
+  }
+ ],
+ "numbers": {
+  "v1_q4_k_m_agreement": 0.944,
+  "v2_q4_k_m_agreement": 0.914,
+  "v3_q4_k_m_agreement": {
+   "agree": 240,
+   "n": 240,
+   "value": 1.0
+  },
+  "typed_teacher_agreement": {
+   "v1": 0.5335,
+   "v2": 0.7345,
+   "v3": 0.7915,
+   "v3_correct": 1583,
+   "n": 2000,
+   "states": 400
+  },
+  "params": {
+   "v1": "2B",
+   "v2": "2B",
+   "v3_text_model": 752393024
+  },
+  "size_ratio_v3_over_2b": 0.4,
+  "context_ratio_v3_over_v2_prompt": 25.0
+ },
+ "sources": {
+  "v1": "https://huggingface.co/chaoliangUNSW/Jev-Style-Qwen3.5-2B-Decision-GGUF/raw/main/README.md (file table 'Same decision as bf16' Q4_K_M 94.4%; 'LoRA rank 16 on all linear layers'; 'Up to 26 options (20 when ... top_logprobs)'; 'Trained on five English task families'; quickstart llama-server without -c; prompt has one [Question])",
+  "v2": "https://huggingface.co/chaoliangUNSW/Jev-Style-Qwen3.5-2B-Decision-v2-GGUF/raw/main/README.md (Q4_K_M 91.4% choice agreement vs CUDA BF16 on frozen 500-decision subset; '2-26 unique options, within a 1,024-token prompt'; 'English state'; quickstart -c 2048; rank-32 LoRA, 33,638,400 trainable; continued from v1; ' A' through ' Z' readout; typed-decisions 53.35% v1 / 73.45% v2, 2,000 decisions from 400 states)",
+  "v3": "chart_data.json: design.generations (export_manifest.json parameters_text_model=752393024; config.resolved.json readout=verdict, no LoRA keys; jevbench/results.json scorer.max_len=25600; apps.jsonl banking77_full 400 rows x 77 options; scoreboard long_grid_plus claim_25k_ok=true), quant.v3 gguf-q4_k_m 240/240 (export_r2/main/parity/report.json), typed.accuracy.v3 1583/2000 (typed_test.jsonl, 400 group_ids)"
+ },
+ "footnote": "v1/v2: as reported on their public Hugging Face cards (v1 GGUF card; v2 and v2-GGUF cards; v1's typed-decisions number is reported on the v2 card). v3: release manifest, training config and eval files; Q4_K_M size = exported file (GB = 10^9 bytes), parity rows drawn from the training pool. Typed decisions: same 2,000 decisions from 400 states; v1/v2 scored by the v2 card's harness, v3 by ours. In-domain for v3; v1 not trained on typed decisions; v2's pool included typed workflow decisions. '51 evaluated' = MASSIVE locales (14 trained, 37 held out); fine-tuning covers 19 languages. 25,600 tokens = the runtime's whole-input limit; 25x = vs v2's 1,024-token prompt."
+}
