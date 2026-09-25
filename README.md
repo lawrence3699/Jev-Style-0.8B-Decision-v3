@@ -40,24 +40,30 @@ tags:
 
 # Jev-Style-0.8B-Decision-v3
 
-**Jev-Style decision series:** [v1 · 2B](https://huggingface.co/chaoliangUNSW/Jev-Style-Qwen3.5-2B-Decision-GGUF) → [v2 · 2B](https://huggingface.co/chaoliangUNSW/Jev-Style-Qwen3.5-2B-Decision-v2) → **v3 · 0.8B (this model)** · **Website:** [jevstyle.com](https://jevstyle.com/#v3) · **Collection:** [all v3 builds and demos](https://huggingface.co/collections/chaoliangUNSW/jev-style-08b-decision-v3-6ab58abb90ae4b7b55578b3e)
+**Jev-Style decision series:** [v1 · 2B](https://huggingface.co/chaoliangUNSW/Jev-Style-Qwen3.5-2B-Decision-GGUF) → [v2 · 2B](https://huggingface.co/chaoliangUNSW/Jev-Style-Qwen3.5-2B-Decision-v2) → **v3 · 0.8B (this model)** · **GitHub:** [jev-style](https://github.com/lawrence3699/jev-style) · **Website:** [jevstyle.com](https://jevstyle.com/#v3) · **Collection:** [all v3 builds and demos](https://huggingface.co/collections/chaoliangUNSW/jev-style-08b-decision-v3-6ab58abb90ae4b7b55578b3e)
+
+> **Run it locally, inside your agents:** [github.com/lawrence3699/jev-style](https://github.com/lawrence3699/jev-style) serves this model behind a systemone-compatible API with a Playground, and adds six agent skills (`npx skills add lawrence3699/jev-style`), a Claude Code guard hook and MCP tools.
+> `uv tool install "jev-style[all] @ git+https://github.com/lawrence3699/jev-style"` then `jev-style serve`.
+
 
 **Jev-style decisions on your laptop.** Give it any text and a question; it returns a calibrated probability for every option in one forward pass. 0.8B parameters, open weights, Apache-2.0.
 
-![Jev-Style 0.8B Decision v3: the whole model is 0.53 GB in 4-bit, and it is ahead of Laya typed and Jev on 2,000 typed decisions](https://huggingface.co/chaoliangUNSW/Jev-Style-0.8B-Decision-v3/resolve/main/figures/banner.png)
+![Jev-Style 0.8B Decision v3: the whole model is 0.53 GB in 4-bit; beyond its training data it is ahead of the best official Laya checkpoint on Banking77, 37 held-out MASSIVE languages and tweet_topic](https://huggingface.co/chaoliangUNSW/Jev-Style-0.8B-Decision-v3/resolve/main/figures/banner.png)
 
-| | **Jev-Style v3 · 0.8B** | Laya typed | Jev (API) |
-|---|:---:|:---:|:---:|
-| Typed decisions, accuracy ↑ | **79.2%** | 76.6% | 72.7%¹ |
-| Probability error, Brier ↓ | **0.046** | 0.061 | 0.148¹ |
-| Runs on your own machine | **Yes, 0.53 GB (4-bit GGUF)** | Yes | No, API only |
-| Longest input per call | **25,600 tokens** | 1,024 by default² | not published |
+| Beyond its training data | **Jev-Style v3 · 0.8B** | Best official Laya |
+|---|:---:|:---:|
+| Banking77, 77 intents (never trained) ↑ | **68.2%** | 49.2% |
+| MASSIVE intent, 37 held-out languages ↑ | **65.5%** | 36.1% |
+| tweet_topic, zero-shot ↑ | **75.5%** | 63.2%¹ |
+| JevBench v1.4.1, 231 public items, zero-shot ↑ | **64.1%** | 58.4%² |
+| Runs on your own machine | **Yes, 0.53 GB (4-bit GGUF)** | Yes |
+| Longest input per call | **25,600 tokens** | 1,024 by default³ |
 
-<sub>¹ Same 2,000 typed decisions (LocalLLaMA/typed-decisions). v3 and Laya typed were trained on its train split; Jev is zero-shot, with numbers from the dataset card. Protocol and paired confidence intervals: see [Typed decisions](#typed-decisions-08b-beats-the-2b-models-and-jev). ² Default input budget in the Laya README: 1,024 tokens for the multilingual and typed checkpoints, 512 for English.</sub>
+<sub>Laya: the best of its three official checkpoints, re-run by us on identical rows with their shipped temperatures; paired 95% CIs exclude zero for Banking77 and MASSIVE. ¹ English Laya, as published by the elcronos study. ² Laya's score as published on the JevBench board; it lies inside v3's 95% CI, so this lead is a point estimate. ³ Default input budget in the Laya README: 1,024 tokens for the multilingual and typed checkpoints, 512 for English. Jev (API) has higher accuracy than v3 on each of these sets where its accuracy is published. Details: [Results](#results).</sub>
 
 **Reads long documents in one call.** Up to 25,600 tokens of input, 25× Laya's 1,024-token default and 25× our 2B v2's prompt. On 1,280 real 24K-token items v3 answers **98.3%** correctly, and accuracy stays flat from 1K to 24K tokens (preregistered claim, passed).
 
-**Also:** +30.3 points over the best official Laya checkpoint on model routing · ahead of Laya multilingual in 51 of 51 languages.
+**Also:** ahead of Laya multilingual in 51 of 51 languages · +2.6 points over Laya's typed checkpoint on typed decisions, trained on the same split ([how to read that number](#reading-the-typed-number)).
 
 **[Try it in your browser →](https://huggingface.co/spaces/chaoliangUNSW/jev-style-v3)**
 
@@ -84,7 +90,7 @@ Other builds: [GGUF for llama.cpp](https://huggingface.co/chaoliangUNSW/Jev-Styl
 
 ## What's new in v3
 
-- **Smaller and stronger.** 0.8B instead of 2B, and 79.2% vs 73.5% for our 2B v2 on the same 2,000 typed decisions.
+- **Smaller and stronger.** 0.8B instead of 2B, and 79.2% vs 73.5% teacher agreement for our 2B v2 on the same 2,000 typed decisions.
 - **No letter cap.** v1 and v2 read one option-letter token, so a question could have at most 26 options. v3
   scores a verdict slot per option, so the options are whatever you pass. Banking77 was run with all 77 intents
   in one pass.
@@ -128,14 +134,70 @@ Other builds: [GGUF for llama.cpp](https://huggingface.co/chaoliangUNSW/Jev-Styl
 
 ## Results
 
-### Typed decisions: 0.8B beats the 2B models and Jev
+<a id="beyond-its-training-data"></a>
 
-![Typed-decisions accuracy and Brier score: Jev-Style 0.8B v3 vs Jev, Laya typed and the 2B v1/v2](figures/headline_typed.png)
+### Beyond its training data
 
-At 0.8B parameters, v3 scores **79.2%** on the 2,000 typed decisions. That is **+6.4 points over Jev**, +5.7 over
-our 2B v2 and +2.6 over Laya's typed checkpoint, and the Brier score is **3.2× lower than Jev's** (0.046 vs 0.148).
+Results on rows that v3 never trained on (the MASSIVE chart also shows the 14 locales it did train on; each note
+states the protocol). Laya numbers are its official checkpoints re-run by us on
+identical rows unless a note says otherwise. Jev (API) has higher accuracy than v3 on each of these sets where its
+accuracy is published.
 
-<sub>Typed-decisions test set (LocalLLaMA/typed-decisions), 2,000 decisions from 400 states. In-domain for v3 and Laya typed (both trained on its train split); zero-shot for Jev (numbers from the dataset card, measured through the Jev API on all 2,000 decisions). Laya: official typed-decisions checkpoint re-run by us on identical rows with its shipped temperature. 2B v1/v2: teacher agreement as reported on the v2 card (same 2,000 decisions, scored by that card's harness; v1 was not trained on typed decisions, v2's training pool included typed workflow decisions). Jev's accuracy is published as 0.727, so the gap is 6.40–6.50 points. v3: 1,583 / 2,000 correct, 95% CI 77.3–80.9% (Wilson); v3 minus Laya typed, paired bootstrap 95% CI +1.0 to +4.2 points.</sub>
+#### Beyond Laya: up to +30 points
+
+![v3 vs the best official Laya checkpoint on five decision tasks](figures/beyond_laya.png)
+
+**On five decision tasks scored on identical rows, the 0.8B v3 beats the best official Laya checkpoint on every
+one:** +19.0 points on 77-way Banking77, +7.2 balanced accuracy on jailbreak detection, +29.5 macro-F1 on
+toxicity, +30.3 on model routing and +29.4 across the 37 locales held out of MASSIVE training.
+
+<sub>Laya numbers: official checkpoints (English, typed-decisions, multilingual) re-run by us on identical rows with their shipped temperatures and default token budgets; the best of the three is shown per task. v3 trained on tasks of the same kind from other datasets, never on these evaluation rows: intent (CLINC150/HWU64; Banking77 never trained), jailbreak (other permissive sets plus teacher data), toxicity (civil_comments plus teacher data; toxic-chat is evaluation-only), routing (teacher-written; the gsm8k/mbpp/AG rows are evaluation-only), MASSIVE in 14 other locales (no MASSIVE rows in these 37). n = 400 / 400 / 400 / 399 / 3,700 (37 × 100). Every gap's paired 95% bootstrap CI excludes zero.</sub>
+
+#### Zero-shot topics: +12 points over English Laya
+
+![Zero-shot tweet_topic and fin_topic accuracy: v3 vs English Laya, with Jev on tweet_topic](figures/zeroshot.png)
+
+**On two topic sets it never trained on, v3 leads English Laya by +12.3 points on tweet_topic** (75.5% vs 63.2%)
+**and +12.5 points on the 20-way fin_topic** (46.7% vs 34.2%). On tweet_topic it lands **within 4 points of Jev**
+(75.5% vs 79.3%). Macro-F1 leads over English Laya are +13.8 points (59.9% vs 46.1%) and +8.9 points (45.2% vs 36.2%).
+With its shipped temperature, its probabilities are also better calibrated than Jev's on both sets: ECE 0.027 vs
+0.063 on tweet_topic and 0.046 vs 0.166 on fin_topic.
+
+<sub>Zero-shot for every system: neither set is in v3's training pool; accuracy over every row of the pinned test files (n = 1,693 and 4,117). Jev (1.13, API) and English Laya: numbers published by the [elcronos jev-vs-open-decision-models study](https://github.com/elcronos/jev-vs-open-decision-models) with its own prompt (results/cross_dataset_summary.json @ a1901bc), not re-run by us. v3: scored by us on the identical rows, label sets and instruction, in v3's own input format; tweet_topic accuracy 95% CI 73.4–77.5%. ECE: 15 equal-width bins as in the study; v3 with its shipped global temperature (0.880, fitted on v3's own calibration split, never on these sets), Jev's ECE as published (raw API probabilities).</sub>
+
+#### JevBench: ahead of Laya and every Qwen3.5-0.8B-based system
+
+![JevBench v1.4.1 public accuracy: v3 vs Laya and the Qwen3.5-0.8B-based systems](figures/jevbench.png)
+
+**On the 231 public JevBench v1.4.1 items, v3 scores 64.1% zero-shot**: 5.6 points above Laya, and ahead of every
+Qwen3.5-0.8B-based system on the board, including a dedicated 0.8B decision fine-tune (+4.8 points) and
+SimpleJev on the same base (+9.5 points). Every answer is a valid option (231 of 231), because v3 can only score
+the options it is given.
+
+<sub>JevBench v1.4.1, public items only (231). v3: self-run zero-shot with the vendored official harness (commit 24b9b5c), 148 / 231 correct, 95% CI 57.7–70.0% (Wilson); training-pool contamination scan: 0 hits; not an official leaderboard entry. Other rows: public accuracy as published in the board's [v1.4.1 results file](https://github.com/fstandhartinger/jevbench). Shown: Laya plus every Qwen3.5-0.8B-based system on the board; other board systems are not shown. Laya's and M. Ghafiri's scores lie inside v3's 95% CI, so those two leads are point estimates, not significant at n = 231.</sub>
+
+#### 51 languages, 51 wins
+
+![Per-language MASSIVE intent accuracy, v3 vs Laya multilingual, 51 languages](figures/multilingual.png)
+
+**One 0.8B model, 51 languages, 51 wins over Laya.** On MASSIVE intent (20 options per question) v3 averages
+**71.7%** across 51 languages, against 40.1% for the official Laya multilingual checkpoint (+31.7 points). It
+beats Laya multilingual in every one of the 51 languages, by at least 11 points, and stays above 3× chance in all
+of them. That includes the 37 locales held out of MASSIVE training (65.5% vs 36.1%), 32 of them outside the 19
+fine-tuning languages.
+
+<sub>MASSIVE intent (mteb/amazon_massive_intent) test rows, 100 per language, 20 candidate intents per row (chance 5%, 3× chance 15%); accuracy = top-scored option. v3: in-domain for the 14 trained locales, held out for the other 37 (vi/th/el/ur had about 1.3K translated-NLI training rows each; zh-TW shares Chinese with zh-CN; a 69-row multilingual jailbreak set in training may include a few prompts in other held-out languages). Laya: official multilingual checkpoint re-run by us on identical rows with its shipped temperature and default token budget (held-out for Laya). v3 is also ahead of the best of the three official Laya checkpoints in all 51 languages (per-language point estimates on 100 rows each, smallest gap 10 points). Paired 95% CI of the 51-language macro difference: +30.1 to +33.1 points.</sub>
+
+<a id="typed-decisions"></a>
+
+### Typed decisions: ahead of Laya's typed checkpoint on the same train split
+
+![Typed-decisions accuracy of v3 and Laya's typed checkpoint with teacher-noise reference lines, and v3 vs Laya typed by teacher margin](figures/headline_typed.png)
+
+v3 scores **79.2%** on the 2,000 typed decisions, **+2.6 points over Laya's typed checkpoint**, which was trained on
+the same split, and +5.7 over our 2B v2.
+
+<sub>Typed-decisions test set (LocalLLaMA/typed-decisions), 2,000 decisions from 400 states. In-domain for v3 and Laya typed (both trained on its train split). Laya: official typed-decisions checkpoint re-run by us on identical rows with its shipped temperature. 2B v2: teacher agreement as reported on its card (same 2,000 decisions, scored by that card's harness; its training pool included typed workflow decisions). v3: 1,583 / 2,000 correct, 95% CI 77.3–80.9% (Wilson); v3 minus Laya typed, paired bootstrap 95% CI +1.0 to +4.2 points. Jev (zero-shot, dataset card) scores 72.7%; that is not a like-for-like comparison (see below).</sub>
 
 **Head-to-head against Laya's typed checkpoint.** Both models trained on this dataset's train split, and v3 wins on all four
 metrics, each with a paired 95% CI that excludes zero:
@@ -149,30 +211,34 @@ metrics, each with a paired 95% CI that excludes zero:
 
 <sub>Both in-domain; v3 also trained on 27,300 synthetic typed items from other workflows. Laya: official checkpoint re-run by us on identical rows with its shipped temperature. Paired case-cluster bootstrap within suites, 2,000 resamples.</sub>
 
+
+<a id="reading-the-typed-number"></a>
+
+**Reading the typed number.** The gold labels come from one ~4B teacher: each is the argmax of the mean of three
+teacher samples. In-domain accuracy therefore measures agreement with that teacher, and the dataset card notes that
+scores well above ~0.75 partly reflect the teacher's quirks rather than the task. The test split does not release the
+individual samples, so the card's teacher self-agreement (73.5%, measured on its 1,600-case set) cannot be recomputed
+here. What the released data does allow:
+
+- One draw from the teacher's mean distribution matches the gold argmax **65.9%** of the time on the test split.
+- Split by how sure the teacher was, v3 and Laya typed **tie on the teacher's near-ties**; v3's lead comes from cases
+  where the teacher is clear.
+
+| Teacher margin (top-1 − top-2 probability) | Decisions | Laya typed | **v3** | Difference, paired 95% CI |
+|---|---:|---:|---:|---|
+| Below 0.1 (near-ties) | 315 | 51.7% | 51.7% | +0.0 pts [−4.4, +4.5] |
+| 0.1 to 0.3 | 555 | 66.1% | **69.7%** | +3.6 pts [+0.2, +7.3] |
+| 0.3 and above (teacher is clear) | 1,130 | 88.7% | **91.4%** | +2.7 pts [+0.8, +4.6] |
+
+This rules out fitting the teacher's noise as the source of the gap to Laya typed. It cannot separate task skill from
+the teacher's consistent biases, because both models trained on its labels; the [results beyond the training
+data](#beyond-its-training-data) are the check for that. Jev's 72.7% on this set is zero-shot, so it is not a
+like-for-like comparison with either in-domain model.
+
+<sub>Gold labels and label_agreement flags: LocalLLaMA/typed-decisions test split. One teacher draw = mean over decisions of the gold's top probability. Paired bootstrap resampling the 400 states, 2,000 resamples per row. Values and script: [typed_teacher_noise.json](figures/typed_teacher_noise.json).</sub>
+
 <details>
-<summary><strong>More results:</strong> +30 points over Laya · 51 languages · calibration · 24K-token documents · JevBench · zero-shot topics · speed · 4-bit parity</summary>
-
-### Beyond Laya: up to +30 points
-
-![v3 vs the best official Laya checkpoint on five decision tasks](figures/beyond_laya.png)
-
-**On five decision tasks scored on identical rows, the 0.8B v3 beats the best official Laya checkpoint on every
-one:** +19.0 points on 77-way Banking77, +7.2 balanced accuracy on jailbreak detection, +29.5 macro-F1 on
-toxicity, +30.3 on model routing and +29.4 across the 37 locales held out of MASSIVE training.
-
-<sub>Laya numbers: official checkpoints (English, typed-decisions, multilingual) re-run by us on identical rows with their shipped temperatures and default token budgets; the best of the three is shown per task. v3 trained on tasks of the same kind from other datasets, never on these evaluation rows: intent (CLINC150/HWU64; Banking77 never trained), jailbreak (other permissive sets plus teacher data), toxicity (civil_comments plus teacher data; toxic-chat is evaluation-only), routing (teacher-written; the gsm8k/mbpp/AG rows are evaluation-only), MASSIVE in 14 other locales (no MASSIVE rows in these 37). n = 400 / 400 / 400 / 399 / 3,700 (37 × 100). Every gap's paired 95% bootstrap CI excludes zero.</sub>
-
-### 51 languages, 51 wins
-
-![Per-language MASSIVE intent accuracy, v3 vs Laya multilingual, 51 languages](figures/multilingual.png)
-
-**One 0.8B model, 51 languages, 51 wins over Laya.** On MASSIVE intent (20 options per question) v3 averages
-**71.7%** across 51 languages, against 40.1% for the official Laya multilingual checkpoint (+31.7 points). It
-beats Laya multilingual in every one of the 51 languages, by at least 11 points, and stays above 3× chance in all
-of them. That includes the 37 locales held out of MASSIVE training (65.5% vs 36.1%), 32 of them outside the 19
-fine-tuning languages.
-
-<sub>MASSIVE intent (mteb/amazon_massive_intent) test rows, 100 per language, 20 candidate intents per row (chance 5%, 3× chance 15%); accuracy = top-scored option. v3: in-domain for the 14 trained locales, held out for the other 37 (vi/th/el/ur had about 1.3K translated-NLI training rows each; zh-TW shares Chinese with zh-CN; a 69-row multilingual jailbreak set in training may include a few prompts in other held-out languages). Laya: official multilingual checkpoint re-run by us on identical rows with its shipped temperature and default token budget (held-out for Laya). v3 is also ahead of the best of the three official Laya checkpoints in all 51 languages (per-language point estimates on 100 rows each, smallest gap 10 points). Paired 95% CI of the 51-language macro difference: +30.1 to +33.1 points.</sub>
+<summary><strong>More results:</strong> calibration · 24K-token documents · speed · 4-bit parity</summary>
 
 ### Probabilities you can act on
 
@@ -201,29 +267,6 @@ with the state removed or swapped for another item's state fall to chance (28.9%
 at 24K), so the answers cannot be recovered from the question alone.
 
 <sub>v3 only. Laya's default input budget is 512 tokens (English) / 1,024 (multilingual, typed) per the Laya README, so Laya is not plotted. Suite long_grid_plus, English and Chinese documents: preregistered 2026-09-24 and amended before any model was scored (+96 items per 24K depth decile, thresholds unchanged); 320 items per bin, 1,280 at 24K. Controlled accuracy = the real item is correct AND its question-only and state-swap controls pass; both controls are at chance in every length bin. 25K claim rule: |24K − 2K–4K reference| ≤ 5 points and every 24K evidence-depth decile within 10 points of it.</sub>
-
-### JevBench: ahead of Laya and every Qwen3.5-0.8B-based system
-
-![JevBench v1.4.1 public accuracy: v3 vs Laya and the Qwen3.5-0.8B-based systems](figures/jevbench.png)
-
-**On the 231 public JevBench v1.4.1 items, v3 scores 64.1% zero-shot**: 5.6 points above Laya, and ahead of every
-Qwen3.5-0.8B-based system on the board, including a dedicated 0.8B decision fine-tune (+4.8 points) and
-SimpleJev on the same base (+9.5 points). Every answer is a valid option (231 of 231), because v3 can only score
-the options it is given.
-
-<sub>JevBench v1.4.1, public items only (231). v3: self-run zero-shot with the vendored official harness (commit 24b9b5c), 148 / 231 correct, 95% CI 57.7–70.0% (Wilson); training-pool contamination scan: 0 hits; not an official leaderboard entry. Other rows: public accuracy as published in the board's [v1.4.1 results file](https://github.com/fstandhartinger/jevbench). Shown: Laya plus every Qwen3.5-0.8B-based system on the board; other board systems are not shown. Laya's and M. Ghafiri's scores lie inside v3's 95% CI, so those two leads are point estimates, not significant at n = 231.</sub>
-
-### Zero-shot topics: +12 points over English Laya
-
-![Zero-shot tweet_topic and fin_topic accuracy: v3 vs English Laya, with Jev on tweet_topic](figures/zeroshot.png)
-
-**On two topic sets it never trained on, v3 leads English Laya by +12.3 points on tweet_topic** (75.5% vs 63.2%)
-**and +12.5 points on the 20-way fin_topic** (46.7% vs 34.2%). On tweet_topic it lands **within 4 points of Jev**
-(75.5% vs 79.3%). Macro-F1 leads over English Laya are +13.8 points (59.9% vs 46.1%) and +8.9 points (45.2% vs 36.2%).
-With its shipped temperature, its probabilities are also better calibrated than Jev's on both sets: ECE 0.027 vs
-0.063 on tweet_topic and 0.046 vs 0.166 on fin_topic.
-
-<sub>Zero-shot for every system: neither set is in v3's training pool; accuracy over every row of the pinned test files (n = 1,693 and 4,117). Jev (1.13, API) and English Laya: numbers published by the [elcronos jev-vs-open-decision-models study](https://github.com/elcronos/jev-vs-open-decision-models) with its own prompt (results/cross_dataset_summary.json @ a1901bc), not re-run by us. v3: scored by us on the identical rows, label sets and instruction, in v3's own input format; tweet_topic accuracy 95% CI 73.4–77.5%. ECE: 15 equal-width bins as in the study; v3 with its shipped global temperature (0.880, fitted on v3's own calibration split, never on these sets), Jev's ECE as published (raw API probabilities).</sub>
 
 ### Speed: many questions, one read
 
@@ -431,7 +474,8 @@ Judge each option:
   [multilingual](figures/multilingual.data.json), [calibration](figures/calibration.data.json),
   [long_context](figures/long_context.json), [jevbench](figures/jevbench.data.json),
   [zeroshot](figures/zeroshot.json), [latency](figures/latency.data.json),
-  [quantization](figures/quantization.data.json), [design_table](figures/design_table.data.json).
+  [quantization](figures/quantization.data.json), [design_table](figures/design_table.data.json),
+  [typed_teacher_noise](figures/typed_teacher_noise.json), [banner](figures/banner.data.json).
 - Every v3 and re-run Laya number comes from prediction files that were each scored once. Paired differences use
   a case-cluster bootstrap within suites (2,000 resamples). A win is only claimed when the 95% CI excludes zero,
   except where a chart or note says otherwise (JevBench leads over Laya and M. Ghafiri, and per-language MASSIVE

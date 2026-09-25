@@ -1,7 +1,7 @@
 {
   "format": "jev-style-manifest-v1",
   "repo": "chaoliangUNSW/Jev-Style-0.8B-Decision-v3",
-  "created_unix": 1790264851.973563,
+  "created_unix": 1790293524.81474,
   "files": {
     "LICENSE": {
       "sha256": "bbedc3fda3305820b977265f01b8619d87570a6739de3a5582c3464840f1e57a",
@@ -12,8 +12,12 @@
       "bytes": 1966
     },
     "README.md": {
-      "sha256": "5fb2e4d23bf7844512d7c825d7fbd482533126fe93c1c19aabfa0290dd607df7",
-      "bytes": 32989
+      "sha256": "7e98320ade6fb80f63ffe1a29cc478f12caf08575d384eea4e2045da93a1f0e3",
+      "bytes": 36126
+    },
+    "__pycache__/jev_style_decision.cpython-312.pyc": {
+      "sha256": "4e68d51a447aa64877128431a50b7fdca85f57eb7558754cb76f65858339e528",
+      "bytes": 35081
     },
     "chat_template.jinja": {
       "sha256": "273d8e0e683b885071fb17e08d71e5f2a5ddfb5309756181681de4f5a1822d80",
@@ -23,9 +27,13 @@
       "sha256": "3f56b6210db3c52e0bafb50da005eb52b6d340ab4ad980091879b397743675fc",
       "bytes": 1790
     },
+    "figures/banner.data.json": {
+      "sha256": "b9d992327c8d9db777cef1d53a49226f19d45c4ce5c16c3e284f525405c41e20",
+      "bytes": 728
+    },
     "figures/banner.png": {
-      "sha256": "86aebc939a802a8c931cc85f7aab2c0b89e05a1d5cd0c6928aafd3289d396bec",
-      "bytes": 344736
+      "sha256": "43d8ca0c7ce6fc140558e57a0196c8d69d6dc61ce597f9186a0a286ba8cace58",
+      "bytes": 385876
     },
     "figures/beyond_laya.json": {
       "sha256": "a6dfd582fe3aca32bcd67cf01b85190d92084a0790f7744dd03180df5923f946",
@@ -64,16 +72,16 @@
       "bytes": 26655
     },
     "figures/headline_typed.data.json": {
-      "sha256": "04380aa3823f80489ae37f893de0bda67ae2dae38fd07e37f88700f7c173f0ec",
-      "bytes": 3819
+      "sha256": "13f18eb866d87d21057478cc40d8180b054258d733996b9b0a98fa846bcc0ae1",
+      "bytes": 2492
     },
     "figures/headline_typed.png": {
-      "sha256": "9e763e4cbd86a25299785b94a89945f2c3a7cab4b1c7d5000f9456c4d220a1f4",
-      "bytes": 175884
+      "sha256": "0f4a50b91df02593f177b5154f57621ff5d7450b2812f303488545d2d55255be",
+      "bytes": 216728
     },
     "figures/headline_typed.svg": {
-      "sha256": "a49ec30b28319d682d9465145bf6435ac4ec4ad11c46a28c552c9b851fb27f37",
-      "bytes": 20359
+      "sha256": "345d8bf7fefdbdf26890ce9c30d74b3df2a4642d19768168f10d0fc1821d7f6b",
+      "bytes": 23730
     },
     "figures/jevbench.data.json": {
       "sha256": "f9173e65f5cd1fe9fadad8c93a8d00dbe5181e7314d49f18c6f547a0ed168543",
@@ -134,6 +142,10 @@
     "figures/quantization.svg": {
       "sha256": "70720bb46ec1e718dcbfac9a83d3b5d11d50b3a5cc3356915465d70d95f3d43b",
       "bytes": 28756
+    },
+    "figures/typed_teacher_noise.json": {
+      "sha256": "08ac501f990c889d72cba4b7909de5129860159f28a95fee19ce82cc0bd36dbe",
+      "bytes": 2004
     },
     "figures/zeroshot.json": {
       "sha256": "003c087074b876efab789fadf94f51d134c604d5f2efce417557732de2272e9d",

@@ -1,0 +1,30 @@
+{
+ "rows": [
+  {
+   "task": "Banking77",
+   "subset": "77 intents",
+   "v3_pct": 68.2,
+   "laya_pct": 49.2,
+   "laya": "best Laya"
+  },
+  {
+   "task": "MASSIVE intent",
+   "subset": "37 held-out languages",
+   "v3_pct": 65.5,
+   "laya_pct": 36.1,
+   "laya": "best Laya"
+  },
+  {
+   "task": "tweet_topic",
+   "subset": "zero-shot",
+   "v3_pct": 75.5,
+   "laya_pct": 63.2,
+   "laya": "Laya English"
+  }
+ ],
+ "note": "Banking77 and tweet_topic are not in v3's training data; MASSIVE shows the 37 locales held out of its training. Laya: best official checkpoint re-run by us on identical rows; tweet_topic: English Laya as published by the elcronos study.",
+ "sources": [
+  "figures/beyond_laya.json",
+  "figures/zeroshot.json"
+ ]
+}

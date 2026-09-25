@@ -1,0 +1,93 @@
+{
+ "what": "typed-decisions test split, 2,000 decisions / 400 states; v3 vs Laya typed (official checkpoint, re-run by us); both trained on the train split",
+ "gold": "argmax of the mean of three teacher samples; individual samples not released",
+ "single_draw_reference": 0.6589,
+ "dataset_card_references": {
+  "teacher_self_agreement": 0.735,
+  "factor_model": 0.704,
+  "majority": 0.52,
+  "note": "from the LocalLLaMA/typed-decisions card, measured on its 1,600-case set"
+ },
+ "argmax_agree_rate": 0.594,
+ "bootstrap": "paired, resampling states (clusters), 2000 resamples per subset, one generator seeded 0",
+ "by_margin": [
+  {
+   "subset": "all",
+   "n": 2000,
+   "v3": 0.7915,
+   "laya_typed": 0.766,
+   "diff_pts": 2.55,
+   "diff_ci95_pts": [
+    1.05,
+    4.25
+   ],
+   "mean_gold_max_prob": 0.6589
+  },
+  {
+   "subset": "margin < 0.1",
+   "n": 315,
+   "v3": 0.51746,
+   "laya_typed": 0.51746,
+   "diff_pts": 0.0,
+   "diff_ci95_pts": [
+    -4.36,
+    4.52
+   ],
+   "mean_gold_max_prob": 0.4481
+  },
+  {
+   "subset": "0.1 <= margin < 0.3",
+   "n": 555,
+   "v3": 0.697297,
+   "laya_typed": 0.661261,
+   "diff_pts": 3.6,
+   "diff_ci95_pts": [
+    0.18,
+    7.27
+   ],
+   "mean_gold_max_prob": 0.5337
+  },
+  {
+   "subset": "margin >= 0.3",
+   "n": 1130,
+   "v3": 0.914159,
+   "laya_typed": 0.886726,
+   "diff_pts": 2.74,
+   "diff_ci95_pts": [
+    0.82,
+    4.61
+   ],
+   "mean_gold_max_prob": 0.7792
+  }
+ ],
+ "by_argmax_agree": [
+  {
+   "subset": "argmax_agree",
+   "n": 1188,
+   "v3": 0.906566,
+   "laya_typed": 0.877104,
+   "diff_pts": 2.95,
+   "diff_ci95_pts": [
+    1.18,
+    4.71
+   ],
+   "mean_gold_max_prob": 0.7581
+  },
+  {
+   "subset": "not argmax_agree",
+   "n": 812,
+   "v3": 0.623153,
+   "laya_typed": 0.603448,
+   "diff_pts": 1.97,
+   "diff_ci95_pts": [
+    -0.99,
+    4.83
+   ],
+   "mean_gold_max_prob": 0.5139
+  }
+ ],
+ "sources": {
+  "v3": "runs/macjev/received/20260924-0313/evals/main/test/typed_test.jsonl",
+  "laya_typed": "runs/macjev/laya_baselines/typed/typed_test.jsonl"
+ }
+}
