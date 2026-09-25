@@ -141,7 +141,12 @@
       "mps",
       "cpu"
     ],
-    "long_inputs": "query-chunked SDPA on MPS/CPU (1024 queries per chunk)"
+    "long_inputs": "query-chunked SDPA on MPS/CPU (1024 queries per chunk)",
+    "split_options": {
+      "default": true,
+      "added": "2026-09-26",
+      "what": "choice questions over the 2,048-token head budget are scored in contiguous, token-balanced option chunks (fewest chunks); one softmax over all options; in-budget questions bit-identical to the previous runtime"
+    }
   },
   "runtime_parity": {
     "protocol": "2026-09-24: each runtime script run in a clean subprocess (cwd = repo folder, empty PYTHONPATH, HF_HUB_OFFLINE=1, --verify) on 24 fixed parity-fixture rows (every 10th of the 240 G5 rows; 12 categories families, choice/score/noul, 92-8156 tokens) and compared with the reference (training-code) scorer of the same format on the same inputs, probabilities with the same calibration temperature; plus 2 synthetic long states (16,381 and 25,582 tokens). Rendered token ids identical to the reference renderer on 244/244 rows (240 fixture rows + 4 adversarial special-token/unicode rows). Re-run 2026-09-24 after the rename to Jev-Style-0.8B-Decision-v3, the no-category = global-temperature default and the GGUF general.name metadata edit: all six formats again identical to the reference scorer run on the original (pre-edit) files (max |prob diff| 0.0 same backend, 0 top-1 changes). Re-run 2026-09-25 after the GGUF decide_many fix (runtime code change in decide_many only, docstrings in all scripts): all six formats gave outputs identical (0.0) to the 2026-09-24 run on the 24 rows.",

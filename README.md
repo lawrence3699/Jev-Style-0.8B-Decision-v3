@@ -408,10 +408,15 @@ Judge each option:
 - **Input budget.** The whole rendered input, meaning state, question, options and readout, may be up to 25,600
   tokens. The head (question, options and readout) may be up to 2,048 tokens. Over-budget inputs raise
   `InputBudgetError`, and nothing is ever truncated silently.
+- **Long option lists.** When a choice question's options do not fit the 2,048-token head together, the runtime
+  scores them in option chunks. Each chunk is an ordinary question with the same text and a contiguous slice of the
+  options; the chunks are as few and as even as possible, and one softmax runs over all options (`option_chunks` in
+  the result). Questions that fit are unchanged (bit-identical to the previous runtime on a 476-request test set).
+  `--no-split-options` / `split_options=False` restores the error. (runtime update 2026-09-26)
 - **Decisions only.** The model scores the options you give it and returns probabilities. It does not generate
   text, and it takes no actions on its own.
-- **Options.** `choice` takes any number of named options within the 2,048-token head (77 is the largest set we
-  evaluated; the GGUF runtime accepts up to 256 options per question). `score` takes 2 to 10 ordered levels, lowest first. `noul` needs no options.
+- **Options.** `choice` takes any number of named options; lists over the 2,048-token head are scored in option
+  chunks (77 is the largest set we evaluated in one head; the GGUF runtime accepts up to 256 options per chunk). `score` takes 2 to 10 ordered levels, lowest first. `noul` needs no options.
 - **Several questions about one state.** Use `decide_many`. In the GGUF runtime it sends all questions to the
   bundled scorer in one request. By default the results are identical to one `decide` call per question; to keep
   them identical, the state is shared only in whole 1,024-token blocks, so the time saved starts at 1,024-token
