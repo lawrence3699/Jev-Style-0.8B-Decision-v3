@@ -2,7 +2,7 @@
 license: apache-2.0
 base_model: Qwen/Qwen3.5-0.8B
 base_model_relation: finetune
-library_name: transformers
+library_name: jev-style
 pipeline_tag: text-classification
 language:
   - en
@@ -26,6 +26,7 @@ language:
   - vi
 tags:
   - decision-model
+  - transformers
   - jev-style
   - system-one
   - calibration
@@ -43,7 +44,13 @@ tags:
 **Jev-Style decision series:** [v1 · 2B](https://huggingface.co/chaoliangUNSW/Jev-Style-Qwen3.5-2B-Decision-GGUF) → [v2 · 2B](https://huggingface.co/chaoliangUNSW/Jev-Style-Qwen3.5-2B-Decision-v2) → **v3 · 0.8B (this model)** · **GitHub:** [jev-style](https://github.com/lawrence3699/jev-style) · **Website:** [jevstyle.com](https://jevstyle.com/#v3) · **Collection:** [all v3 builds and demos](https://huggingface.co/collections/chaoliangUNSW/jev-style-08b-decision-v3-6ab58abb90ae4b7b55578b3e)
 
 > **Run it locally, inside your agents:** [github.com/lawrence3699/jev-style](https://github.com/lawrence3699/jev-style) serves this model behind a systemone-compatible API with a Playground, and adds six agent skills (`npx skills add lawrence3699/jev-style`), a Claude Code guard hook and MCP tools.
-> `uv tool install "jev-style[all] @ git+https://github.com/lawrence3699/jev-style"` then `jev-style serve`.
+> `pip install "jev-style[torch]"`, then `jev-style serve`, or in Python:
+>
+> ```python
+> from jev_style import JevStyle, noul
+> js = JevStyle.from_pretrained("chaoliangUNSW/Jev-Style-0.8B-Decision-v3")
+> js.decide("I was charged twice.", {"billing": noul("This is about billing.")})
+> ```
 
 
 **Jev-style decisions on your laptop.** Give it any text and a question; it returns a calibrated probability for every option in one forward pass. 0.8B parameters, open weights, Apache-2.0.
