@@ -146,6 +146,32 @@
       "default": true,
       "added": "2026-09-26",
       "what": "choice questions over the 2,048-token head budget are scored in contiguous, token-balanced option chunks (fewest chunks); one softmax over all options; in-budget questions bit-identical to the previous runtime"
+    },
+    "cuda_graphs": {
+      "default": false,
+      "added": "2026-10-03",
+      "what": "cuda_graphs=True (CLI --cuda-graphs, CUDA only) records one CUDA graph per padded input length (64..4,096 tokens, up to 256 options) at start-up and replays it; right padding never reaches a verdict slot; anything else uses the ordinary path",
+      "parity": {
+        "questions": 4992,
+        "requests": 3758,
+        "top1_changes": 0,
+        "max_abs_probability_difference": 0.000862,
+        "max_abs_score_difference": 0.00283
+      },
+      "latency_ms": {
+        "ordinary": {
+          "median_ms": 41.555,
+          "p95_ms": 198.51,
+          "mean_ms": 81.588
+        },
+        "cuda_graphs": {
+          "median_ms": 11.296,
+          "p95_ms": 160.895,
+          "mean_ms": 48.32
+        }
+      },
+      "capture_seconds": 7.0,
+      "measured": "RTX 5090 (32 GB), torch 2.14.1+cu130, transformers 5.18.0, flash-linear-attention 0.5.2, float32; 4,992 questions / 3,758 requests of a held-out calibration set; latency = wall time around decide_many, one request at a time, warm, 1,000 requests sampled with random.Random(0)"
     }
   },
   "runtime_parity": {

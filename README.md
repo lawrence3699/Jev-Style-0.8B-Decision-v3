@@ -288,6 +288,18 @@ questions about 8K-token states in 2.3 to 2.6 s, which the 4K-budget engine cann
 
 <sub>Identical-architecture timing: untrained Qwen3.5-0.8B export (latency does not depend on the weights). v3 = llama.cpp GGUF F16, one call per state with all questions scored together (`many_mode="batched"` in the GGUF runtime). Comparison engine = round-1 MacLaya-4K, our own fine-tune of the Laya multilingual architecture (4,096-token budget, FP32 on Apple MPS), one call per question; it is not an official Laya checkpoint. Compared at 5 and 10 questions per state. Apple M1 Max 64 GB, warm end-to-end p50, idle run 2026-09-23, prefix reuse off.</sub>
 
+### CUDA graphs: 3.7× faster short calls on CUDA
+
+`JevStyleDecision(".", device="cuda", cuda_graphs=True)` (CLI `--cuda-graphs`; on by default on CUDA in [`jev-style`](https://github.com/lawrence3699/jev-style) 0.4.0 and later) records one CUDA graph per padded input length at start-up (about 7 s) and replays it. Same weights and readout: on 4,992 held-out calibration questions it picked the same answer as the ordinary path every time (largest probability difference 0.0009).
+
+| RTX 5090, float32 | ordinary path | CUDA graphs |
+|---|---:|---:|
+| median | 41.6 ms | **11.3 ms** |
+| mean | 81.6 ms | 48.3 ms |
+| p95 | 198.5 ms | 160.9 ms |
+
+<sub>One request at a time, warm, 1,000 requests sampled from a 3,758-request calibration set (4,992 questions, mostly up to 4K tokens, about a quarter non-English); wall time around `decide_many`. torch 2.14.1+cu130, transformers 5.18.0, flash-linear-attention 0.5.2. Inputs over 4,096 tokens or with more than 256 options use the ordinary path.</sub>
+
 ### Quantization: 4-bit, 0.53 GB, same calls
 
 ![Top-1 agreement with full precision and file size for every format of v1, v2 and v3](figures/quantization.png)

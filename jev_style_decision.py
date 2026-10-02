@@ -536,6 +536,61 @@ def _enable_chunked_attention(model, chunk=ATTN_CHUNK):
     return True
 
 
+# ----------------------------------------------------------------------- CUDA graphs (optional, CUDA only)
+# One graph per padded input length is recorded once and then replayed, which removes the per-call Python and
+# kernel-launch overhead that dominates short inputs. Inputs are right-padded to the next recorded length: the model
+# is causal, so the padding comes after every verdict slot and never reaches the scores. Inputs longer than the
+# largest recorded length, or with more than GRAPH_MAX_SLOTS options, run the ordinary path.
+GRAPH_LENGTHS = (64, 128, 192, 256, 320, 384, 448, 512, 640, 768, 896, 1024, 1280, 1536, 1792, 2048, 2560, 3072,
+                 3584, 4096)
+GRAPH_MAX_SLOTS = 256
+
+
+class _GraphRunner:
+    def __init__(self, model, direction, device, lengths=GRAPH_LENGTHS, max_slots=GRAPH_MAX_SLOTS):
+        import torch
+        self.torch, self.device, self.max_slots = torch, device, int(max_slots)
+        self.graphs = {}
+        pool = torch.cuda.graph_pool_handle()           # one memory pool: graphs are replayed one at a time
+        with torch.inference_mode():
+            for n in sorted({int(x) for x in lengths}, reverse=True):
+                ids = torch.zeros((1, n), dtype=torch.long, device=device)
+                slots = torch.zeros((self.max_slots,), dtype=torch.long, device=device)
+
+                def forward(ids=ids, slots=slots):
+                    h = model.model(input_ids=ids, use_cache=False).last_hidden_state
+                    return h[0].index_select(0, slots).float() @ direction
+
+                side = torch.cuda.Stream()
+                side.wait_stream(torch.cuda.current_stream())
+                with torch.cuda.stream(side):
+                    for _ in range(3):                      # warm-up: kernel autotuning happens outside the graph
+                        forward()
+                torch.cuda.current_stream().wait_stream(side)
+                graph = torch.cuda.CUDAGraph()
+                with torch.cuda.graph(graph, pool=pool):
+                    out = forward()
+                self.graphs[n] = (graph, ids, slots, out)
+        self.lengths = sorted(self.graphs)
+
+    def scores(self, ids, slots):
+        """Scores of the verdict slots, or None when the input does not fit a recorded graph."""
+        if len(slots) > self.max_slots:
+            return None
+        n = next((m for m in self.lengths if m >= len(ids)), None)
+        if n is None:
+            return None
+        torch = self.torch
+        graph, s_ids, s_slots, out = self.graphs[n]
+        with torch.inference_mode():                    # the static buffers are inference tensors
+            s_ids.zero_()
+            s_ids[0, :len(ids)].copy_(torch.tensor(ids, dtype=torch.long))
+            s_slots.zero_()
+            s_slots[:len(slots)].copy_(torch.tensor(slots, dtype=torch.long))
+            graph.replay()
+            return out[:len(slots)].tolist()
+
+
 class JevStyleDecision(DecisionBase):
     """Transformers / PyTorch runtime (CUDA, Apple MPS or CPU).
 
@@ -544,11 +599,15 @@ class JevStyleDecision(DecisionBase):
     ...          "Which team should handle this ticket?",
     ...          options={"billing": "payments, refunds", "tech": "bugs, crashes", "sales": "pricing, plans"},
     ...          category="theme_routing")["probabilities"]
+
+    cuda_graphs=True (device="cuda" only): record one CUDA graph per padded input length at start-up and replay it,
+    which makes short calls several times faster; same weights and readout (see release_config.json ->
+    runtime.cuda_graphs). Inputs over 4,096 tokens or with more than 256 options use the ordinary path.
     """
     backend = "torch"
 
     def __init__(self, model_dir=HERE, device=None, dtype="float32", category=None, head_max=HARD_HEAD_MAX,
-                 max_len=CONTEXT_LIMIT, attn_chunk=ATTN_CHUNK, verify=False, split_options=True):
+                 max_len=CONTEXT_LIMIT, attn_chunk=ATTN_CHUNK, verify=False, split_options=True, cuda_graphs=False):
         import torch
         self.torch = torch
         self.split_options = bool(split_options)
@@ -576,9 +635,18 @@ class JevStyleDecision(DecisionBase):
         self.chunked_attention = _enable_chunked_attention(self.model, attn_chunk) if device != "cuda" else False
         w = self.model.get_output_embeddings().weight
         self.direction = (w[self.renderer.yes].float() - w[self.renderer.no].float()).detach()
+        self.cuda_graphs = None
+        if cuda_graphs:
+            if torch.device(device).type != "cuda":
+                raise ValueError("cuda_graphs=True needs device='cuda'")
+            self.cuda_graphs = _GraphRunner(self.model, self.direction, device)
 
     def _scores(self, r):
         torch = self.torch
+        if self.cuda_graphs is not None:
+            scores = self.cuda_graphs.scores(r.ids, r.slots)
+            if scores is not None:
+                return scores
         with torch.no_grad():
             ids = torch.tensor([r.ids], device=self.device)
             h = self.model.model(input_ids=ids, use_cache=False).last_hidden_state      # final normed hidden states
@@ -592,10 +660,12 @@ def main(argv=None):
     ap.add_argument("--dtype", default="float32", choices=["float32", "bfloat16", "float16"])
     ap.add_argument("--no-split-options", action="store_true",
                     help="raise InputBudgetError instead of scoring an over-budget choice question in option chunks")
+    ap.add_argument("--cuda-graphs", action="store_true",
+                    help="CUDA only: record CUDA graphs at start-up and replay them (much faster short inputs)")
     args = ap.parse_args(argv)
     engine = JevStyleDecision(args.model_dir, device=args.device, dtype=args.dtype, category=args.category,
                               head_max=args.head_max, max_len=args.max_len, verify=args.verify,
-                              split_options=not args.no_split_options)
+                              split_options=not args.no_split_options, cuda_graphs=args.cuda_graphs)
     return run_cli(args, engine)
 
 
