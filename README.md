@@ -37,11 +37,26 @@ tags:
   - on-device
   - llm-routing
   - guardrails
+datasets:
+  - chaoliangUNSW/MacJev-0.8B-Decision-Data
 ---
 
 # Jev-Style-0.8B-Decision-v3
 
-**Jev-Style decision series:** [v1 · 2B](https://huggingface.co/chaoliangUNSW/Jev-Style-Qwen3.5-2B-Decision-GGUF) → [v2 · 2B](https://huggingface.co/chaoliangUNSW/Jev-Style-Qwen3.5-2B-Decision-v2) → **v3 · 0.8B (this model)** · **GitHub:** [jev-style](https://github.com/lawrence3699/jev-style) · **Website:** [jevstyle.com](https://jevstyle.com/#v3) · **Collection:** [all v3 builds and demos](https://huggingface.co/collections/chaoliangUNSW/jev-style-08b-decision-v3-6ab58abb90ae4b7b55578b3e)
+<!-- jevstyle:project-links:start -->
+**Local classification, routing and fixed-choice scoring with JevStyle.**
+
+This is the text-only **0.8B v3** release, maintained by Chaoliang Yan. Its training sources are documented below. The separate **2B v4** release was trained in part on soft labels distilled from TypeSafe Jev 1.14 through its public API. JevStyle is independently maintained, with no TypeSafe affiliation or endorsement. Training provenance is release-specific.
+
+**Official local installation — no hosted API key or agent simulation:** For local text, install `python -m pip install -U "jev-style[mlx]"` on Apple silicon, or `python -m pip install -U "jev-style[torch]"` for CPU/CUDA; then run `jev-style serve --release 0.8b`. The 0.8B release is text-only. The package runs downloaded JevStyle weights on your machine. [Step-by-step installation and verification](https://jevstyle.com/guides/run-locally/). TypeSafe/OpenRouter Jev access and skills that simulate decisions with another agent model are separate execution paths.
+
+**Hosted service is separate from local inference.** Hosted API: operational. It serves the 2B v4 (text only; 8,192-token context, inputs up to 8,000 tokens). There is currently no fixed per-account quota: no daily request count and no per-minute cap. Capacity is shared, so a busy server answers 429 with a `Retry-After` header and clients should retry. Check [current service status](https://jevstyle.com/api/#service-status) or [live health](https://api.jevstyle.com/healthz) when using the hosted API.
+
+Choose a workflow: [Python text classification](https://jevstyle.com/guides/local-text-classification/), [local routing tools and Apple silicon](https://jevstyle.com/guides/local-decision-models/), [receipt or screenshot yes/no decisions](https://jevstyle.com/use-cases/local-vision-decisions/), [reproducible routing comparison](https://jevstyle.com/benchmarks/banking-routing/). These guides distinguish suitable alternatives and published evidence; they do not establish universal superiority.
+<!-- jevstyle:project-links:end -->
+
+
+**Jev-Style decision series:** [v1 · 2B](https://huggingface.co/chaoliangUNSW/Jev-Style-Qwen3.5-2B-Decision-GGUF) → [v2 · 2B](https://huggingface.co/chaoliangUNSW/Jev-Style-Qwen3.5-2B-Decision-v2) → **v3 · 0.8B (this model)** · **GitHub:** [jev-style](https://github.com/lawrence3699/jev-style) · **Website:** [jevstyle.com](https://jevstyle.com/models/0-8b-v3/) · **Collection:** [all v3 builds and demos](https://huggingface.co/collections/chaoliangUNSW/jev-style-08b-decision-v3-6ab58abb90ae4b7b55578b3e)
 
 > **Run it locally, inside your agents:** [github.com/lawrence3699/jev-style](https://github.com/lawrence3699/jev-style) serves this model behind a systemone-compatible API with a Playground, and adds six agent skills (`npx skills add lawrence3699/jev-style`), a Claude Code guard hook and MCP tools.
 > `pip install "jev-style[torch]"`, then `jev-style serve`, or in Python:
@@ -140,6 +155,11 @@ Other builds: [GGUF for llama.cpp](https://huggingface.co/chaoliangUNSW/Jev-Styl
 </details>
 
 ## Results
+
+**Decision Index.** Our own complete run of Decision Index 0.2.1 scored **16.64** (engine, environment and
+`scores.json` in [chaoliangUNSW/decision-index-results](https://huggingface.co/datasets/chaoliangUNSW/decision-index-results)). On the public
+[Decision Index](https://huggingface.co/spaces/multimodalart/jev-decision-index) 0.3 board (2026-11-04) the 0.8B v3 is listed at Public 17.0 / Full 12.5. It is a
+small model built for typed decisions, classification and long inputs on a laptop; those are the results below.
 
 <a id="beyond-its-training-data"></a>
 
@@ -324,9 +344,7 @@ for each allowed answer in a single pass. Jev-Style models follow that pattern w
 
 The model cannot answer outside the options it is given, and it never decodes text.
 
-> **Independent project.** Jev-Style is not affiliated with, endorsed by or connected to TypeSafe AI or Jev, and no
-> Jev weights, code or outputs are used. It is also not affiliated with the Laya authors or the Qwen team. Jev and
-> Laya numbers on this card come from the sources named under each result.
+> **Independent project; release-specific training.** Chaoliang Yan maintains JevStyle independently, with no TypeSafe, Laya or Qwen affiliation or endorsement. This card documents 0.8B v3; read its own training section for its sources. The separate 2B v4 model was trained in part on soft labels distilled from TypeSafe Jev 1.14 through its public API. Jev and Laya comparison numbers on this card come from the sources named under each result.
 
 ## Usage in detail (transformers)
 
@@ -470,6 +488,9 @@ Judge each option:
 
 - **Base model:** Qwen/Qwen3.5-0.8B by the Qwen team (Alibaba Cloud), Apache-2.0. The Apache License 2.0 text is
   in `LICENSE`, and `NOTICE` lists the modifications. This model is released under Apache-2.0.
+- **Training pool:** the 321,756-row pool, its per-row `license` field, the teacher outputs and the evaluation
+  records of the run are published as [chaoliangUNSW/MacJev-0.8B-Decision-Data](https://huggingface.co/datasets/chaoliangUNSW/MacJev-0.8B-Decision-Data) (MacJev-0.8B was
+  this model's working name).
 - **Datasets with restrictive or unclear terms** (kept in training by the author's decision):
   - DAIR Emotion (14,757 training rows): its dataset card says it should be used for educational and research
     purposes only.
